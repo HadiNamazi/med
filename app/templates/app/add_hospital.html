@@ -1,0 +1,439 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mash Able Light</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Phoenixcoded">
+    <meta name="keywords"
+        content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="Phoenixcoded">
+    <!-- Favicon icon -->
+    <link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Mada:300,400,500,600,700" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/plugins/bootstrap/dist/css/bootstrap.min.css' %}">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/themify-icons/themify-icons.css' %}">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/icofont/css/icofont.css' %}">
+    <!-- flag icon framework css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/pages/flag-icon/flag-icon.min.css' %}">
+    <!-- Menu-Search css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/pages/menu-search/css/component.css' %}">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/linearicons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/ionicons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.css' %}">
+
+</head>
+
+<body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            <ul class="nav-left">
+                                <li>
+                                </li>
+                                <li>
+                                    <a class="main-search morphsearch-search" href="#">
+                                        <!-- themify icon -->
+                                        <i class="ti-search"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                </li>
+                                <li class="mega-menu-top">
+                                    <ul class="show-notification row">
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Popular Links</h6>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="form-elements-component.html">Form Elements</a></li>
+                                                <li><a href="button.html">Buttons</a></li>
+                                                <li><a href="map-google.html">Maps</a></li>
+                                                <li><a href="#!">Contact Cards</a></li>
+                                                <li><a href="user-profile.html">User Information</a></li>
+                                                <li><a href="auth-lock-screen.html">Lock Screen</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Mailbox</h6>
+                                            <ul class="mega-mailbox">
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-folder"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Data Backup</h5>
+                                                            <small class="text-muted">Store your data</small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-headphone-alt"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Support</h5>
+                                                            <small class="text-muted">24-hour support</small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-dropbox"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Drop-box</h5>
+                                                            <small class="text-muted">Store large amount of data in
+                                                                one-box only
+                                                            </small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-location-pin"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Location</h5>
+                                                            <small class="text-muted">Find Your Location with ease of
+                                                                use</small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Gallery</h6>
+                                            <div class="row m-b-20">
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/01.jpg' %}" alt="Gallery-1">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/02.jpg' %}" alt="Gallery-2">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/03.jpg' %}" alt="Gallery-3">
+                                                </div>
+                                            </div>
+                                            <div class="row m-b-20">
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/04.jpg' %}" alt="Gallery-4">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/05.jpg' %}" alt="Gallery-5">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/06.jpg' %}" alt="Gallery-6">
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Contact Us</h6>
+                                            <div class="mega-menu-contact">
+                                                <div class="form-group row">
+                                                    <label for="example-text-input"
+                                                        class="col-3 col-form-label">Name</label>
+                                                    <div class="col-9">
+                                                        <input class="form-control" type="text"
+                                                            placeholder="Artisanal kale" id="example-text-input">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-search-input"
+                                                        class="col-3 col-form-label">Email</label>
+                                                    <div class="col-9">
+                                                        <input class="form-control" type="email"
+                                                            placeholder="Enter your E-mail Id"
+                                                            id="example-search-input">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-search-input"
+                                                        class="col-3 col-form-label">Contact</label>
+                                                    <div class="col-9">
+                                                        <input class="form-control" type="number"
+                                                            placeholder="+91-9898989898" id="example-search-input">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleTextarea"
+                                                        class="col-3 col-form-label">Message</label>
+                                                    <div class="col-9">
+                                                        <textarea class="form-control" id="exampleTextarea"
+                                                            rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav-right">
+                            </ul>
+                            <div class="upgrade-button-header f-right">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+
+                            <div class="pcoded-navigatio-lavel">Forms</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'add-patient' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Add hospital</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active pcoded-trigger">
+                                    <a href="{% url 'add-hospital' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Add hospital</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                            <div class="pcoded-navigatio-lavel">Reports</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="bs-basic-table.html">
+                                        <span class="pcoded-micon"><i class="ti-receipt"></i></span>
+                                        <span class="pcoded-mtext">Patients report</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page body start -->
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- Basic Form Inputs card start -->
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Add patient</h5>
+                                                        <div class="card-header-right">
+                                                            <i class="icofont icofont-rounded-down"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <form action="" method="post">
+                                                            {% csrf_token %}
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label">Hospital name</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="hospital">
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary"
+                                                                id="primary-popover-content" data-container="body"
+                                                                data-toggle="popover" title=""
+                                                                data-placement="bottom">Submit</button>
+                                                        </form>
+                                                    </div>
+                                                    <!-- Basic Form Inputs card end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Page body end -->
+                                    </div>
+                                </div>
+                                <!-- Main-body end -->
+                                <!--<div id="styleSelector">-->
+
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Warning Section Starts -->
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+        <!-- Warning Section Ends -->
+        <!-- Required Jquery -->
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/tether/dist/js/tether.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <!-- jquery slimscroll js -->
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+        <!-- modernizr js -->
+        <script type="text/javascript" src="{% static 'assets/plugins/modernizr/modernizr.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/modernizr/feature-detects/css-scrollbars.js' %}"></script>
+
+
+        <!-- Color picker js -->
+        <!--<script type="text/javascript" src="assets/plugins/spectrum/spectrum.js"></script>-->
+        <!--<script type="text/javascript" src="assets/plugins/jscolor/jscolor.js"></script>-->
+        <!-- Mini-color js -->
+        <!--<script type="text/javascript" src="assets/plugins/jquery-minicolors/jquery.minicolors.min.js"></script>-->
+
+        <!-- Custom js -->
+        <script type="text/javascript" src="{% static 'assets/js/script.js' %}"></script>
+        <script src="{% static 'assets/js/pcoded.min.js' %}"></script>
+        <script src="{% static 'assets/js/demo-12.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.mousewheel.min.js' %}"></script>
+        <script>
+            "use strict";
+            $(document).ready(function () {
+
+                // Color picker js start
+                function change_checkbox_color() {
+                    $('.color-box .show-box').on('click', function () {
+                        $(".color-box").toggleClass("open");
+                    });
+
+                    $('.colors-list a').on('click', function () {
+                        var curr_color = $('main').data('checkbox-color');
+                        var color = $(this).data('checkbox-color');
+                        var new_colot = 'checkbox-' + color;
+
+                        $('.rkmd-checkbox .input-checkbox').each(function (i, v) {
+                            var findColor = $(this).hasClass(curr_color);
+
+                            if (findColor) {
+                                $(this).removeClass(curr_color);
+                                $(this).addClass(new_colot);
+                            }
+
+                            $('main').data('checkbox-color', new_colot);
+
+                        });
+                    });
+                }
+
+                // Mini-color js start
+                $('.demo').each(function () {
+                    $(this).minicolors({
+                        control: $(this).attr('data-control') || 'hue',
+                        defaultValue: $(this).attr('data-defaultValue') || '',
+                        format: $(this).attr('data-format') || 'hex',
+                        keywords: $(this).attr('data-keywords') || '',
+                        inline: $(this).attr('data-inline') === 'true',
+                        letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                        opacity: $(this).attr('data-opacity'),
+                        position: $(this).attr('data-position') || 'bottom left',
+                        swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
+                        change: function (value, opacity) {
+                            if (!value) return;
+                            if (opacity) value += ', ' + opacity;
+                            if (typeof console === 'object') {
+                                console.log(value);
+                            }
+                        },
+                        theme: 'bootstrap'
+                    });
+
+                });
+                // Mini-color js ends
+            });
+        </script>
+
+</body>
+
+</html>

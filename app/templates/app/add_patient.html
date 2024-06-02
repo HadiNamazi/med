@@ -230,8 +230,7 @@
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu">
-
-                            <div class="pcoded-navigatio-lavel">Forms</div>
+                            <div class="pcoded-navigatio-lavel">Registration</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active pcoded-trigger">
                                     <a href="{% url 'add-patient' %}">
@@ -241,27 +240,58 @@
                                     </a>
                                 </li>
                             </ul>
+
+                            <div class="pcoded-navigatio-lavel">Forms</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="{% url 'add-hospital' %}">
+                                    <a href="{% url 'form1' %}">
                                         <span class="pcoded-micon"><i class="ti-layers"></i></span>
-                                        <span class="pcoded-mtext">Add hospital</span>
+                                        <span class="pcoded-mtext">Form 1</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                             </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'form2' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Form 2</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'form3' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Form 3</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
 
 
                             <div class="pcoded-navigatio-lavel">Reports</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="bs-basic-table.html">
+                                    <a href="{% url 'patient-base-report' %}">
                                         <span class="pcoded-micon"><i class="ti-receipt"></i></span>
-                                        <span class="pcoded-mtext">Patients report</span>
+                                        <span class="pcoded-mtext">Patient-base report</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                             </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="bs-basic-table.html">
+                                        <span class="pcoded-micon"><i class="ti-receipt"></i></span>
+                                        <span class="pcoded-mtext">Attribute-base report</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
                     </nav>
                     <div class="pcoded-content">
@@ -283,7 +313,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-block">
-                                                        <form action="" method="post">
+                                                        <form action="" method="post" enctype="multipart/form-data">
                                                             {% csrf_token %}
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Name &
@@ -296,27 +326,27 @@
                                                                 <label class="col-sm-2 col-form-label">National
                                                                     code</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control" name="nc">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Phone
                                                                     number</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control" name="pn">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Mobile phone
                                                                     number</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" class="form-control">
+                                                                    <input type="text" class="form-control" name="mpn">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Hospital</label>
                                                                 <div class="col-sm-10">
-                                                                    <select name="select" class="form-control">
+                                                                    <select class="form-control" name="hospital">
                                                                         <option value="opt1">Select One Hospital
                                                                         </option>
                                                                         <option value="opt2">Hospital 1</option>
@@ -329,14 +359,14 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Image</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="file" class="form-control">
+                                                                    <input type="file" class="form-control" name="image" accept="image/*">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Address</label>
                                                                 <div class="col-sm-10">
                                                                     <textarea rows="5" cols="5" class="form-control"
-                                                                        placeholder=""></textarea>
+                                                                        placeholder="" name="address"></textarea>
                                                                 </div>
                                                             </div>
                                                             <button type="submit" class="btn btn-primary"

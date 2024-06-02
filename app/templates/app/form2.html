@@ -1,0 +1,2065 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form 2</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Phoenixcoded">
+    <meta name="keywords"
+        content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="Phoenixcoded">
+    <!-- Favicon icon -->
+    <link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Mada:300,400,500,600,700" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/plugins/bootstrap/dist/css/bootstrap.min.css' %}">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/themify-icons/themify-icons.css' %}">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/icofont/css/icofont.css' %}">
+    <!-- flag icon framework css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/pages/flag-icon/flag-icon.min.css' %}">
+    <!-- Menu-Search css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/pages/menu-search/css/component.css' %}">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/linearicons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/ionicons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.css' %}">
+
+</head>
+
+<body>
+    <style>
+        .dropdown-menu.show {
+            display: block;
+        }
+    </style> <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            <ul class="nav-left">
+                                <li>
+                                </li>
+                                <li>
+                                    <a class="main-search morphsearch-search" href="#">
+                                        <!-- themify icon -->
+                                        <i class="ti-search"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                </li>
+                                <li class="mega-menu-top">
+                                    <ul class="show-notification row">
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Popular Links</h6>
+                                            <ul class="mega-menu-links">
+                                                <li><a href="form-elements-component.html">Form Elements</a></li>
+                                                <li><a href="button.html">Buttons</a></li>
+                                                <li><a href="map-google.html">Maps</a></li>
+                                                <li><a href="#!">Contact Cards</a></li>
+                                                <li><a href="user-profile.html">User Information</a></li>
+                                                <li><a href="auth-lock-screen.html">Lock Screen</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Mailbox</h6>
+                                            <ul class="mega-mailbox">
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-folder"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Data Backup</h5>
+                                                            <small class="text-muted">Store your data</small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-headphone-alt"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Support</h5>
+                                                            <small class="text-muted">24-hour support</small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-dropbox"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Drop-box</h5>
+                                                            <small class="text-muted">Store large amount of data in
+                                                                one-box only
+                                                            </small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="media">
+                                                        <div class="media-left">
+                                                            <i class="ti-location-pin"></i>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5>Location</h5>
+                                                            <small class="text-muted">Find Your Location with ease of
+                                                                use</small>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Gallery</h6>
+                                            <div class="row m-b-20">
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/01.jpg' %}"
+                                                        alt="Gallery-1">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/02.jpg' %}"
+                                                        alt="Gallery-2">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/03.jpg' %}"
+                                                        alt="Gallery-3">
+                                                </div>
+                                            </div>
+                                            <div class="row m-b-20">
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/04.jpg' %}"
+                                                        alt="Gallery-4">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/05.jpg' %}"
+                                                        alt="Gallery-5">
+                                                </div>
+                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                        src="{% static 'assets/images/mega-menu/06.jpg' %}"
+                                                        alt="Gallery-6">
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
+                                        </li>
+                                        <li class="col-sm-3">
+                                            <h6 class="mega-menu-title">Contact Us</h6>
+                                            <div class="mega-menu-contact">
+                                                <div class="form-group row">
+                                                    <label for="example-text-input"
+                                                        class="col-3 col-form-label">Name</label>
+                                                    <div class="col-9">
+                                                        <input class="form-control" type="text"
+                                                            placeholder="Artisanal kale" id="example-text-input">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-search-input"
+                                                        class="col-3 col-form-label">Email</label>
+                                                    <div class="col-9">
+                                                        <input class="form-control" type="email"
+                                                            placeholder="Enter your E-mail Id"
+                                                            id="example-search-input">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-search-input"
+                                                        class="col-3 col-form-label">Contact</label>
+                                                    <div class="col-9">
+                                                        <input class="form-control" type="number"
+                                                            placeholder="+91-9898989898" id="example-search-input">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleTextarea"
+                                                        class="col-3 col-form-label">Message</label>
+                                                    <div class="col-9">
+                                                        <textarea class="form-control" id="exampleTextarea"
+                                                            rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav-right">
+                            </ul>
+                            <div class="upgrade-button-header f-right">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="pcoded-navigatio-lavel">Registration</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'add-patient' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Add patient</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigatio-lavel">Forms</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'form1' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Form 1</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active pcoded-trigger">
+                                    <a href="{% url 'form2' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Form 2</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'form3' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Form 3</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+
+                            <div class="pcoded-navigatio-lavel">Reports</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'patient-base-report' %}">
+                                        <span class="pcoded-micon"><i class="ti-receipt"></i></span>
+                                        <span class="pcoded-mtext">Patient-base report</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="bs-basic-table.html">
+                                        <span class="pcoded-micon"><i class="ti-receipt"></i></span>
+                                        <span class="pcoded-mtext">Attribute-base report</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page body start -->
+                                    <form action="" method="post" onkeydown="if(event.keyCode === 13) { 
+                                        return false; 
+                                    }">
+                                        {% csrf_token %}
+                                        <div class="page-body">
+                                            <div class="row">
+
+                                                <div class="container ltr_form">
+                                                    <br>
+                                                    <div class="dropdown">
+                                                        <label for="searchinpt">Patient:</label>
+                                                        <input type="text" name="searchinpt" class="form-control"
+                                                            placeholder="Search" id="search-input" aria-haspopup="true"
+                                                            aria-expanded="false" style="margin-bottom: 20px;">
+                                                        <div class="dropdown-menu w-100" aria-labelledby="search-input">
+                                                            {% for patient in patients %}
+                                                                <a class="dropdown-item" href="#">{{patient.cid}} - {{patient.name}}</a>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                    <div class=" row">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="CIC">CIC :</label>
+                                                            <input class="form-control " type="text" name="CIC" value="">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="hospitalupn">Hospital UPN :</label>
+                                                            <input class="form-control " type="text" name="hospitalupn"
+                                                                value="">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="patientuic">Patient UIC :</label>
+                                                            <input class="form-control " type="text" name="patientuic"
+                                                                value="">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="hsctdate">HSCT Date :</label>
+                                                            <input class="form-control my_date_picker " type="text"
+                                                                name="hsctdate" value="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <label for="">
+                                                            HSCT - Minimum Essential Data - A
+                                                            FOLLOW UP REPORT - ANNUAL
+                                                        </label>
+                                                    </div>
+                                                    <div class="alert alert-info " style="background-color:#23282d;">
+                                                        Disease
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="primarydiseasediagnosis">PRIMARY DISEASE DIAGNOSIS
+                                                            :</label>
+                                                        <input class="form-control  " type="text"
+                                                            name="primarydiseasediagnosis" value="">
+                                                    </div>
+                                                    <div class="alert alert-info " style="background-color:#23282d;">
+                                                        Centre Identification
+                                                    </div>
+                                                    <div class=" row">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="ebmtcodecic">EBMT Code (CIC) :</label>
+                                                            <input class="form-control " type="text" name="ebmtcodecic"
+                                                                value="">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="contactperson">Contact person :</label>
+                                                            <input class="form-control " type="text" name="contactperson"
+                                                                value="">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="hospital">Hospital :</label>
+                                                            <input class="form-control " type="text" name="hospital"
+                                                                value="">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="unit">Units :</label>
+                                                            <input class="form-control  " type="text" name="unit" value="">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <label for="email">Email :</label>
+                                                            <input class="form-control  " type="text" name="email" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="alert alert-info " style="background-color:#23282d;">
+                                                        Patient Data
+                                                    </div>
+                                                    <div class=" col-md-12 ">
+                                                        <div class="row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="dateofthisreport">Date of this report :</label>
+                                                                <input class="form-control my_date_picker " type="text"
+                                                                    name="dateofthisreport" value="">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="hospitaluniquepatientnumbercode">Hospital Unique
+                                                                    Patient Number/ Code :</label>
+                                                                <input class="form-control  " type="text"
+                                                                    name="hospitaluniquepatientnumbercode" value="">
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label for="">
+                                                                    (Compulsory, registrations will not be accepted without
+                                                                    this item)
+                                                                </label>
+                                                            </div>
+
+                                                            <div class="form-group col-md-12">
+
+                                                                <input class="form-control  " type="text" name="Initials"
+                                                                    value="">
+                                                                <label for=""> (first name(s) _family name(s)) </label>
+
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="dateofbirth">Date of birth : </label>
+                                                                <input class="form-control my_date_picker " type="text"
+                                                                    name="dateofbirth" value="">
+
+
+                                                            </div>
+                                                            <div class="form-group col-md-1">
+                                                                <label for="hospitaluniquepatientnumbercode">SEX : </label>
+
+
+
+
+                                                            </div>
+                                                            <div class="form-group col-md-3">
+                                                                <label for="male">Male :</label>
+                                                                <input type="radio" name="sex" value="Male">
+
+                                                                <label for="female">Female :</label>
+                                                                <input type="radio" name="sex" value="Female">
+
+                                                                <label for="">(at birth)</label>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="dateofthetransplant">Date of the transplant :
+                                                                </label>
+                                                                <input class="form-control my_date_picker " type="text"
+                                                                    name="dateofthetransplant" value="">
+
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="alert alert-info " style="background-color:#23282d;">
+                                                            Recovery
+
+                                                        </div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+                                                                <label for="">Absolute neutrophil count (ANC)recovery
+                                                                    (Neutrophils ≥ 0.5 x 10 /L; first of 3 consecutive
+                                                                    values after 7 days without any transfusion containing
+                                                                    neutrophils)</label>
+                                                                <div class="form-group col-md-8">
+                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                        value="No">
+                                                                    <label for="0">No :</label>
+
+                                                                    <label for="dateoflastassessment11">Date of last
+                                                                        assessment:</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="dateoflastassessment11" value="">
+                                                                </div>
+                                                                <div class="form-group col-md-8">
+                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                        value="Yes">
+                                                                    <label for="1">Yes :</label>
+
+                                                                    <label for="dateofancrecovery11">Date of ANC
+                                                                        recovery:</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="dateofancrecovery11" id="">
+                                                                </div>
+                                                                <div class="form-group col-md-8">
+                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                        value="Never below">
+                                                                    <label for="neverbelow">
+                                                                        Never below :
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-8">
+                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                        value="Unknow">
+                                                                    <label for="unknown">
+                                                                        Unknown :
+                                                                    </label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+
+                                                                <div class=" row">
+                                                                    <label for="">
+                                                                        Platelet reconstitution (Platelets ≥ 20 x 10 /L;
+                                                                        first of 3 consecutive values after 7 days without
+                                                                        transfusion)
+                                                                    </label>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="plateletreconstitution"
+                                                                            value="No">
+                                                                        <label for="">No </label>
+
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="plateletreconstitution"
+                                                                            value="Yes">
+                                                                        <label for="">Yes : </label>
+
+                                                                        <label for="">Date Platelets ≥ 20 x 10 /l:</label>
+                                                                        <input type="text"
+                                                                            class="form-control my_date_picker "
+                                                                            name="dateplateletsxl11" value="">
+                                                                    </div>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="plateletreconstitution"
+                                                                            value="Never below this level">
+                                                                        <label for="">
+                                                                            Never below this level
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="plateletreconstitution"
+                                                                            value="Date unknown: patient discharged before levels reached">
+                                                                        <label for="">
+                                                                            Date unknown: patient discharged before levels
+                                                                            reached
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="plateletreconstitution"
+                                                                            value="Date unknown: out-patient">
+                                                                        <label for="">
+                                                                            Date unknown: out-patient
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="plateletreconstitution"
+                                                                            value="Unknown">
+                                                                        <label for="">
+                                                                            Unknown
+                                                                        </label>
+
+                                                                    </div>
+
+
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+
+                                                                <div class=" row">
+                                                                    <label for="">
+                                                                        Early graft loss (Engraftment followed by loss of
+                                                                        graft within the first 100 days)
+                                                                    </label>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="earlygraftloss"
+                                                                            value="No">
+                                                                        <label for="">No </label>
+
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="earlygraftloss"
+                                                                            value="Yes">
+                                                                        <label for="">Yes </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-8">
+                                                                        <input type="radio" name="earlygraftloss"
+                                                                            value="Unknown">
+                                                                        <label for="">
+                                                                            Unknown
+                                                                        </label>
+
+                                                                    </div>
+
+
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="alert alert-info " style="background-color:#23282d;">
+                                                            Acute GvHD (Allografts)
+                                                        </div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Acute Graft Versus Host Disease
+                                                                        (Allografts only)</label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Maximum Grade:</label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="acutegraftversushostdiseaseallograftsonly"
+                                                                        value="0">
+                                                                    <label for="">
+                                                                        0 (none)
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="acutegraftversushostdiseaseallograftsonly"
+                                                                        value="I">
+                                                                    <label for="">
+                                                                        I
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="acutegraftversushostdiseaseallograftsonly"
+                                                                        value="II">
+                                                                    <label for="">
+                                                                        II
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="acutegraftversushostdiseaseallograftsonly"
+                                                                        value="III">
+                                                                    <label for="">
+                                                                        III
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="acutegraftversushostdiseaseallograftsonly"
+                                                                        value="IV">
+                                                                    <label for="">
+                                                                        IV
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="acutegraftversushostdiseaseallograftsonly"
+                                                                        value="Present but grade unknown">
+                                                                    <label for="">
+                                                                        Present but grade unknown
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="acutegraftversushostdiseaseallograftsonly"
+                                                                        value="Not evaluated">
+                                                                    <label for="">
+                                                                        Not evaluated
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="dateofonset">Date of onset :</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="dateofonset" value="">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label style="font-size:13px;" for=""> Stage:</label>
+                                                                </div>
+
+                                                                <br>
+                                                                <br>
+                                                                <div class="form-group col-md-6">
+                                                                    <input type="checkbox" name="" value="">
+                                                                    <label for=""> Skin:</label>
+                                                                    <input type="radio" name="austageskin" value="0">
+                                                                    <label for="">
+                                                                        0 (none)
+                                                                    </label>
+                                                                    <input type="radio" name="austageskin" value="1">
+                                                                    <label for="">
+                                                                        1
+                                                                    </label>
+                                                                    <input type="radio" name="austageskin" value="2">
+                                                                    <label for="">
+                                                                        2
+                                                                    </label>
+                                                                    <input type="radio" name="austageskin" value="3">
+                                                                    <label for="">
+                                                                        3
+                                                                    </label>
+                                                                    <input type="radio" name="austageskin" value="4">
+                                                                    <label for="">
+                                                                        4
+                                                                    </label>
+                                                                </div>
+
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="checkbox" name="" value="">
+                                                                    <label for=""> Liver:</label>
+                                                                    <input type="radio" name="austageliver" value="0">
+                                                                    <label for="">
+                                                                        0 (none)
+                                                                    </label>
+                                                                    <input type="radio" name="austageliver" value="1">
+                                                                    <label for="">
+                                                                        1
+                                                                    </label>
+                                                                    <input type="radio" name="austageliver" value="2">
+                                                                    <label for="">
+                                                                        2
+                                                                    </label>
+                                                                    <input type="radio" name="austageliver" value="3">
+                                                                    <label for="">
+                                                                        3
+                                                                    </label>
+                                                                    <input type="radio" name="austageliver" value="4">
+                                                                    <label for="">
+                                                                        4
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="checkbox" name="" value="">
+                                                                    <label for=""> Lower GI tract :</label>
+                                                                    <input type="radio" name="austagelgt" value="0">
+                                                                    <label for="">
+                                                                        0 (none)
+                                                                    </label>
+                                                                    <input type="radio" name="austagelgt" value="1">
+                                                                    <label for="">
+                                                                        1
+                                                                    </label>
+                                                                    <input type="radio" name="austagelgt" value="2">
+                                                                    <label for="">
+                                                                        2
+                                                                    </label>
+                                                                    <input type="radio" name="austagelgt" value="3">
+                                                                    <label for="">
+                                                                        3
+                                                                    </label>
+                                                                    <input type="radio" name="austagelgt" value="4">
+                                                                    <label for="">
+                                                                        4
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="checkbox" name="" value="">
+                                                                    <label for=""> Upper GI tract :</label>
+                                                                    <input type="radio" name="austageugt" value="0">
+                                                                    <label for="">
+                                                                        0 (none)
+                                                                    </label>
+                                                                    <input type="radio" name="austageugt" value="1">
+                                                                    <label for="">
+                                                                        1
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for=""> Other site affected :</label>
+                                                                    <input type="radio" name="austageuotttt" value="No">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+                                                                    <input type="radio" name="austageuotttt" value="Yes">
+                                                                    <label for="">
+                                                                        Yes
+                                                                    </label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="alert alert-info " style="background-color:#23282d;">
+                                                            Additional Cell Infusions</div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+                                                                <label for="">Additional cell infusions (excluding a new
+                                                                    HSCT)</label>
+                                                                <div class="form-group col-md-12">
+
+                                                                    <input type="radio"
+                                                                        name="additionalcellinfusionsexcludinganewhsct"
+                                                                        value="No">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="additionalcellinfusionsexcludinganewhsct"
+                                                                        value="Yes">
+                                                                    <label for="">
+                                                                        Yes
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Is this cell infusion an allogeneic
+                                                                        boost?</label>
+                                                                    <input type="radio"
+                                                                        name="isthiscellinfusionanallogeneicboost"
+                                                                        value="No">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="isthiscellinfusionanallogeneicboost"
+                                                                        value="Yes">
+                                                                    <label for="">
+                                                                        Yes
+                                                                    </label>
+                                                                    <label for="">- Skip Cell therapy table below</label>
+                                                                </div>
+                                                                <label for="">
+                                                                    An allo boost is an infusion of cells from the same
+                                                                    donor without conditioning,with no evidence of
+                                                                    graft rejection.
+                                                                </label>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Is this cell infusion an autologous
+                                                                        boost?</label>
+                                                                    <input type="radio"
+                                                                        name="isthiscellinfusionanautologousboost"
+                                                                        value="No">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="isthiscellinfusionanautologousboost"
+                                                                        value="Yes">
+                                                                    <label for="">
+                                                                        Yes
+                                                                    </label>
+                                                                    <label for="">- Skip Cell therapy table below</label>
+                                                                </div>
+                                                                <label for="">
+                                                                    If the cell infusion is a boost fill in the section
+                                                                    below:
+                                                                </label>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">
+                                                                        <p style="font-size:16px;">Cell therapy :</p>
+                                                                    </label>
+                                                                    <input type="radio" name="celltherapy" value="No">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+                                                                    <input type="radio" name="celltherapy" value="Yes">
+                                                                    <label for="">
+                                                                        Yes
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="firstdateofthecelltherapyinfusion">
+                                                                        First date of the cell therapy infusion
+                                                                    </label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="firstdateofthecelltherapyinfusion" value="">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Source of cell(s) : </label>
+                                                                    <input type="radio" name="sourceofcells" value="Allo">
+                                                                    <label for="">
+                                                                        Allo
+                                                                    </label>
+                                                                    <input type="radio" name="sourceofcells" value="Auto">
+                                                                    <label for="">
+                                                                        Auto
+                                                                    </label>
+                                                                </div>
+                                                                <label for="">(check all that apply)</label>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Type of cell(s): (check all that
+                                                                        apply)</label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="Lymphocyte(DLI)">
+                                                                    <label for="">
+                                                                        Lymphocyte(DLI)
+                                                                    </label>
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="Mesenchymal">
+                                                                    <label for="">
+                                                                        Mesenchymal
+                                                                    </label>
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="Fibroblasts">
+                                                                    <label for="">
+                                                                        Fibroblasts
+                                                                    </label>
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="Dendritic cells">
+                                                                    <label for="">
+                                                                        Dendritic cells
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="NK cells">
+                                                                    <label for="">
+                                                                        NK cells
+                                                                    </label>
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="Regulatory T-cells">
+                                                                    <label for="">
+                                                                        Regulatory T-cells
+                                                                    </label>
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="Gamma/delta cells">
+                                                                    <label for="">
+                                                                        Gamma/delta cells
+                                                                    </label>
+                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                        value="Other, specify">
+                                                                    <label for="">
+                                                                        Other, specify
+                                                                    </label>
+                                                                    <input class="form-control " type="text"
+                                                                        name="typeofcellscheckallthatapplyotxt">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Chronological number of the cell infusion
+                                                                        episode for this patient</label>
+                                                                    <input class="form-control "
+                                                                        name="chronologicalnumberofthecellinfusionepisodeforthispatient"
+                                                                        type="text">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Indication: (check all that apply)</label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="indication"
+                                                                        value="Treatment for disease">
+                                                                    <label for="">
+                                                                        Treatment for disease
+                                                                    </label>
+                                                                    <input type="radio" name="indication" value="protocol">
+                                                                    <label for="">
+                                                                        Planned/protocol
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="indication"
+                                                                        value="Mixed chimaerism">
+                                                                    <label for="">
+                                                                        Mixed chimerism
+
+                                                                    </label>
+                                                                    <input type="radio" name="indication"
+                                                                        value="Prophylactic">
+                                                                    <label for="">
+                                                                        Prophylactic
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="indication"
+                                                                        value="Treatment viral infection">
+                                                                    <label for="">
+                                                                        Treatment viral infection
+                                                                    </label>
+                                                                    <input type="radio" name="indication"
+                                                                        value="Treatment of GvH">
+                                                                    <label for="">
+                                                                        Treatment of GvHD
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="indication"
+                                                                        value="Loss/decreased chimaerism">
+                                                                    <label for="">
+                                                                        Loss/decreased chimerism
+                                                                    </label>
+
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="indication"
+                                                                        value="Treatment PTLD, EBV lymphoma">
+                                                                    <label for="">
+                                                                        Treatment PTLD, EBV lymphoma
+
+                                                                    </label>
+
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="indication"
+                                                                        value="Other, specify">
+                                                                    <label for="">
+                                                                        Other, specify:
+                                                                    </label>
+
+                                                                    <input type="text" name="indicationotherspecify"
+                                                                        class="form-control ">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Number of infusions within 10
+                                                                        weeks</label>
+                                                                    <input type="text" name="numberofinfusionswithinweeks"
+                                                                        class="form-control ">
+                                                                </div>
+                                                                <label for="">
+                                                                    (count only infusions that are part of same regimen and
+                                                                    given for the same indication)
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="alert alert-info " style="background-color:#23282d;">
+                                                            Additional Disease Treatment
+                                                        </div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+                                                                <label for="">Additional disease treatment given (excluding
+                                                                    cell infusion)</label>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="additionaldiseasetreatmentgiven" value="No">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="additionaldiseasetreatmentgiven" value="Yes">
+                                                                    <label for="">
+                                                                        Yes : Reason for this additional treatment
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="reasonforthisadditionaltreatment"
+                                                                        value="Prophylaxis / prevention (planned before the transplant took place)">
+                                                                    <label for="">
+                                                                        Prophylaxis / prevention (planned before the
+                                                                        transplant took place)
+
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="reasonforthisadditionaltreatment"
+                                                                        value="For relapse / progression or persistent disease (not planned)">
+                                                                    <label for="">
+                                                                        For relapse / progression or persistent disease (not
+                                                                        planned)
+
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Date started</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="datestarted" value="">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Chemo/drug</label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="chemodrug" value="No">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio" name="chemodrug" value="Yes">
+                                                                    <label for="">
+                                                                        Yes:
+                                                                    </label>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes11"
+                                                                            value="Imatinib mesylate (Gleevec, Glivec)">
+                                                                        <label for="">
+                                                                            Imatinib mesylate (Gleevec, Glivec)
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes1"
+                                                                            value="Dasatinib (Sprycel)">
+                                                                        <label for="">
+                                                                            Dasatinib (Sprycel)
+
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes2"
+                                                                            value="Nilotinib (Tasigna)">
+                                                                        <label for="">
+                                                                            Nilotinib (Tasigna)
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes3"
+                                                                            value="Bortezomib (Velcade)">
+                                                                        <label for="">
+                                                                            Bortezomib (Velcade)
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes4"
+                                                                            value=" Lenalidomide (Revlimid)">
+                                                                        <label for="">
+                                                                            Lenalidomide (Revlimid)
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes5"
+                                                                            value=" Rituximab (Rituxan, mabthera)">
+                                                                        <label for="">
+                                                                            Rituximab (Rituxan, mabthera)
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes6"
+                                                                            value="Velafermin (FGF)">
+                                                                        <label for="">
+                                                                            Velafermin (FGF)
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes7"
+                                                                            value="Kepivance (KGF, palifermin)">
+                                                                        <label for="">
+                                                                            Kepivance (KGF, palifermin)
+
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes8"
+                                                                            value="Thalidomide">
+                                                                        <label for="">
+                                                                            Thalidomide
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes9"
+                                                                            value="Eculizumab (Soliris)">
+                                                                        <label for="">
+                                                                            Eculizumab (Soliris)
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="checkbox" name="chemodrugyes10"
+                                                                            value="Other drug/chemotherapy, specify">
+                                                                        <label for="">
+                                                                            Other drug/chemotherapy, specify
+
+                                                                        </label>
+                                                                        <input type="text" class="form-control "
+                                                                            name="chemodrugyesotherdrugchemotherapyspecify"
+                                                                            value="">
+                                                                        <label for="">Intrathecal:</label>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="radio" name="intrathecal" value="No">
+                                                                        <label for="">
+                                                                            No
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <input type="radio" name="intrathecal" value="Yes">
+                                                                        <label for="">
+                                                                            Yes
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <label for="">Radiotherapy</label>
+                                                                        <div class="form-group col-md-12">
+                                                                            <input type="radio" name="radiotherapy"
+                                                                                value="No">
+                                                                            <label for="">
+                                                                                No
+
+                                                                            </label>
+
+                                                                        </div>
+                                                                        <div class="form-group col-md-12">
+                                                                            <input type="radio" name="radiotherapy"
+                                                                                value="Yes">
+                                                                            <label for="">
+                                                                                Yes
+
+                                                                            </label>
+
+                                                                        </div>
+                                                                        <div class="form-group col-md-12">
+                                                                            <input type="radio" name="radiotherapy"
+                                                                                value="Unknow">
+                                                                            <label for="">
+                                                                                Unknown
+
+                                                                            </label>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">Best response</div>
+                                                                <div class="form-group col-md-12">
+
+                                                                    <label for="">
+                                                                        Best disease status (response) after HSCT
+
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+
+                                                                    <label for="">
+                                                                        (prior to any treatment modification in response to
+                                                                        a post HSCT disease assessment)
+
+
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+
+                                                                    <label for="">
+                                                                        This field is for Inherited disorders not mandatory
+
+
+
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="bestdiseasestatusresponseafterhsct"
+                                                                        value="Continued complete remission (CCR)">
+                                                                    <label for="">
+                                                                        Continued complete remission (CCR)
+
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="bestdiseasestatusresponseafterhsct"
+                                                                        value="CR achieved: Date achieved">
+                                                                    <label for="">
+                                                                        CR achieved: Date achieved :
+
+                                                                    </label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="bestdiseasestatusresponseafterhsctdateachieved"
+                                                                        value="">
+
+                                                                </div>
+
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="bestdiseasestatusresponseafterhsct"
+                                                                        value="Never in CR : Date assessed">
+                                                                    <label for="">
+                                                                        Never in CR : Date assessed:
+
+                                                                    </label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="bestdiseasestatusresponseafterhsctdateassessed"
+                                                                        value="">
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="bestdiseasestatusresponseafterhsct"
+                                                                        value="Not evaluated">
+                                                                    <label for="">
+                                                                        Not evaluated
+
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">Last Contact Date for
+                                                                    100 day Assessment</div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">If patient has died before this date,
+                                                                        enter date of death, otherwise enter Date of HSCT +
+                                                                        100 DAYS APPROX.</label>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+
+                                                                    <label for="">
+                                                                        Day 100 assessment :
+
+                                                                    </label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="lastcontactdatefordayassessmentdd" value="">
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+
+                                                                    <label for="">
+                                                                        Date of death (if before day 100):
+
+                                                                    </label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="lastcontactdatefordayassessmentdd2" value="">
+
+                                                                </div>
+
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">Chronic GvHD at day
+                                                                    100 (Allografts)</div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Chronic Graft Versus Host Disease present
+                                                                        between HSCT and 100 days or date of death</label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">(allografts only)</label>
+
+                                                                </div>
+
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresent"
+                                                                        value="No">
+                                                                    <label for="">
+                                                                        No (never)
+
+                                                                    </label>
+
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresent"
+                                                                        value="Yes">
+                                                                    <label for="">
+                                                                        Yes :Date of diagnosis of GvHD:
+
+                                                                    </label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="chronicgraftversushostdiseasepresentdt"
+                                                                        value="">
+
+                                                                </div>
+
+
+                                                                <div class="form-group col-md-12">
+
+
+                                                                    <label for="">
+                                                                        Maximum extent during this period
+                                                                    </label>
+
+
+                                                                </div>
+
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresentmtpr"
+                                                                        value="Limited">
+                                                                    <label for="">
+                                                                        Limited
+
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresentmtpr"
+                                                                        value="Extensive">
+                                                                    <label for="">
+                                                                        Extensive
+                                                                    </label>
+
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresentmtpr"
+                                                                        value="Unknown">
+                                                                    <label for="">
+                                                                        Unknown
+
+                                                                    </label>
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+
+
+                                                                    <label for="">
+                                                                        Maximum NIH score Maximum NIH score
+                                                                    </label>
+
+
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresentmtprmxz"
+                                                                        value="Mild">
+                                                                    <label for="">
+                                                                        Mild
+
+                                                                    </label>
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresentmtprmxz"
+                                                                        value="Moderate">
+                                                                    <label for="">
+                                                                        Moderate
+                                                                    </label>
+
+                                                                    <input type="radio" name="maximumextentduringthisperiod"
+                                                                        value="Severe">
+                                                                    <label for="">
+                                                                        Severe
+
+                                                                    </label>
+
+                                                                    <input type="radio"
+                                                                        name="chronicgraftversushostdiseasepresentmtprmxz"
+                                                                        value="Not calculated">
+                                                                    <label for="">
+                                                                        Not calculated
+
+
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">Relapse/Progression
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">First Relapse or Progression after HSCT
+                                                                        (detected by any method)</label>
+                                                                    <input class="form-control " type="text"
+                                                                        name="detectedbyanymethod1relaps" value="">
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="firstrelapseorprogressionafterhsct"
+                                                                        value="No">
+                                                                    <label for="">No</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="firstrelapseorprogressionafterhsct"
+                                                                        value="Yes">
+                                                                    <label for="">Yes: Date first seen</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="firstrelapseorprogressionafterhsctdate"
+                                                                        value="">
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="firstrelapseorprogressionafterhsct"
+                                                                        value="Continuous progression since HSCT">
+                                                                    <label for="">Continuous progression since HSCT</label>
+                                                                </div>
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">Relapse of Leukaemias
+                                                                </div>
+                                                                <div class=" col-md-12 "><label for="">If Yes or Continuous
+                                                                        diagnosis is acute or chronic leukaemia, fill in the
+                                                                        section below</label></div>
+                                                                <div class=" col-md-12 "><label for="">Method of detection
+                                                                        of the first relapse or progression after
+                                                                        HSCT</label></div>
+                                                                <div class=" col-md-12 "><label for="">Fill in only for
+                                                                        acute and chronic leukaemias</label></div>
+                                                                <div class=" col-md-12 "><label for="">Relapse/progression
+                                                                        detected by method: </label><input type="text"
+                                                                        class="form-control "
+                                                                        name="relapseprogressiondetectedbymethod1txt"
+                                                                        value=""></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethod"
+                                                                        value="No"><label for="">NO: </label><span><br>Date
+                                                                        assessed <input type="text"
+                                                                            class="form-control my_date_picker "
+                                                                            name="relapseprogressiondetectedbymethoddaten"
+                                                                            value=""> </span></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethod"
+                                                                        value="Yes"><label for="">Yes:
+                                                                    </label><span><br>Date first seen <input type="text"
+                                                                            class="form-control my_date_picker "
+                                                                            name="relapseprogressiondetectedbymethoddatey"
+                                                                            value=""> </span></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethod"
+                                                                        value="Not evaluated"><label for="">Not evaluated
+                                                                    </label></div>
+                                                                <div class=" col-md-12"><label for="">Relapse/progression
+                                                                        detected by method: </label><input type="text"
+                                                                        class="form-control "
+                                                                        name="relapseprogressiondetectedbymethod2txt"
+                                                                        value=""></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethodcytogeneticcy"
+                                                                        value="No"><label for="">NO: </label><span><br>Date
+                                                                        assessed <input type="text"
+                                                                            class="form-control my_date_picker "
+                                                                            name="relapseprogressiondetectedbymethodcytogeneticcydn"
+                                                                            value=""> </span></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethodcytogeneticcy"
+                                                                        value="Yes"><label for="">Yes:
+                                                                    </label><span><br>Date first seen <input type="text"
+                                                                            class="form-control my_date_picker "
+                                                                            name="relapseprogressiondetectedbymethodcytogeneticcydy"
+                                                                            value=""> </span></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethodcytogeneticcy"
+                                                                        value="Not evaluated"><label for="">Not evaluated
+                                                                    </label></div>
+                                                                <div class=" col-md-12"><label for="">Relapse/progression
+                                                                        detected by method:</label><input type="text"
+                                                                        class="form-control "
+                                                                        name="relapseprogressiondetectedbymethod3txt"
+                                                                        value=""></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethodbm"
+                                                                        value="No"><label for="">NO: </label><span><br>Date
+                                                                        assessed <input type="text"
+                                                                            class="form-control my_date_picker "
+                                                                            name="relapseprogressiondetectedbymethodbmdtn"
+                                                                            value=""> </span></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethodbm"
+                                                                        value="Yes"><label for="">Yes:
+                                                                    </label><span><br>Date first seen <input type="text"
+                                                                            class="form-control my_date_picker "
+                                                                            name="relapseprogressiondetectedbymethodbmdty"
+                                                                            value=""> </span></div>
+                                                                <div class=" col-md-12 "><input type="radio"
+                                                                        name="relapseprogressiondetectedbymethodbm"
+                                                                        value="Not evaluated"><label for="">Not evaluated
+                                                                    </label></div>
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">
+                                                                    Disease assessment at 100 days (All diseases)
+                                                                </div>
+                                                                <div class=" col-md-12 "><label for="">Disease status when
+                                                                        the patient was last seen before day 100 or date of
+                                                                        death</label></div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">
+                                                                        (record the most recent status and date for each
+                                                                        method, depending on the disease)
+                                                                    </label>
+                                                                </div>
+                                                                <div class=" col-md-12 "><label for="">Was disease detected
+                                                                        by method when the patient was last assessed before
+                                                                        day 100 or date of death? </label></div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor458"
+                                                                        value="No">
+                                                                    <label for="">No</label>
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor458"
+                                                                        value="Yes">
+                                                                    <label for="">Yes</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">Last date assessed</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="lastdateassessed458" value="">
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor458"
+                                                                        value="Not evaluated since HSCT was done">
+                                                                    <label for="">Not evaluated since HSCT was done</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-12 ">
+                                                            <div class=" row">
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">Disease Assessment at
+                                                                    100 days - Leukaemias</div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">Was disease detected by method when the
+                                                                        patient was last assessed before day 100 or date of
+                                                                        death?</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">Fill in only for acute and chronic
+                                                                        leukaemias</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor672"
+                                                                        value="No">
+                                                                    <label for="">No</label>
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor672"
+                                                                        value="Yes">
+                                                                    <label for="">Yes</label>
+                                                                    :
+                                                                    <label for="">
+                                                                        was the presence of the disease considered
+                                                                        relapse/progression since HSCT?
+                                                                        <input type="radio"
+                                                                            name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor"
+                                                                            value="No">
+                                                                        <label for="">No</label>
+                                                                        <input type="radio"
+                                                                            name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor"
+                                                                            value="Yes">
+                                                                        <label for="">Yes</label>
+                                                                    </label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">Last date assessed</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="dateoflastassessment667" value="">
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor151"
+                                                                        value="">
+                                                                    <label for="">Not evaluated since HSCT was done</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">
+                                                                        Was disease detected by method when the patient was
+                                                                        last assessed before day 100 or date of death?
+                                                                        molecular
+                                                                        Fill in only for acute and chroni leukaemias
+                                                                    </label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor324"
+                                                                        value="">
+                                                                    <label for="">No</label>
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor324"
+                                                                        value="">
+                                                                    <label for="">Yes</label>
+                                                                    :
+                                                                    <label for="">
+                                                                        as the presence of the disease considered
+                                                                        relapse/progression since HSCT? <input type="radio"
+                                                                            name="wasthepresenceofthediseaseconsideredrelapseprogressionsincehsct"
+                                                                            value="">
+                                                                        <label for="">No</label>
+                                                                        <input type="radio"
+                                                                            name="wasthepresenceofthediseaseconsideredrelapseprogressionsincehsct"
+                                                                            value="">
+                                                                        <label for="">Yes</label>
+                                                                    </label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">Last date assessed</label>
+                                                                    <input type="text" class="form-control my_date_picker "
+                                                                        name="lastdateassessed" value="">
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor324"
+                                                                        value="Not evaluated since HSCT was done">
+                                                                    <label for="">Not evaluated since HSCT was done</label>
+                                                                </div>
+                                                                <div class="alert alert-info  col-md-12"
+                                                                    style="background-color:#23282d;">
+                                                                    Survival Status at 100 days – All diseases
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">Survival Status last contact date at 100
+                                                                        day assessment</label>
+
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio"
+                                                                        name="survivalstatuslastcontactdateatdayassessment"
+                                                                        value="Alive">
+                                                                    <label for="">Alive</label>
+                                                                    <input type="radio"
+                                                                        name="survivalstatuslastcontactdateatdayassessment"
+                                                                        value="Dead">
+                                                                    <label for="">Dead</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <label for="">
+                                                                        Main Cause of Death (check only one main cause)
+                                                                    </label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                        value="Relapse or Progression/Persistent disease">
+                                                                    <label for="">Relapse or Progression/Persistent
+                                                                        disease</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                        value="Secondary malignancy">
+                                                                    <label for="">Secondary malignancy</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                        value="HSCT Related Cause">
+                                                                    <label for="">HSCT Related Cause</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                        value="Unknown">
+                                                                    <label for="">Unknown</label>
+                                                                </div>
+                                                                <div class=" col-md-12 ">
+                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                        value="Other">
+                                                                    <label for="">Other</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="maincauseofdeath22other" value="">
+                                                                    <div class=" col-md-12 ">
+                                                                        <label for="">Contributory Cause of Death (check as
+                                                                            many as appropriate): </label>
+
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="gvhdchk" value="GVHD">
+                                                                        <label for="">GVHD</label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox"
+                                                                            name="interstitialpneumonitischk"
+                                                                            value="Interstitial pneumonitis">
+                                                                        <label for="">
+                                                                            Interstitial pneumonitis
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="pulmonarytoxicitychk"
+                                                                            value="Pulmonary toxicity">
+                                                                        <label for="">Pulmonary toxicity</label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="infectionchk"
+                                                                            value="Infection">
+                                                                        <label for="">Infection</label>
+                                                                        <div class=" col-md-12 ">
+                                                                            <input type="checkbox" name="bacterialchk"
+                                                                                value="bacterial">
+                                                                            <label for="">bacterial</label><input
+                                                                                class="form-control" type="text"
+                                                                                name="bacterialinput" value="">
+                                                                        </div>
+                                                                        <div class=" col-md-12 ">
+                                                                            <input type="checkbox" name="viralchk"
+                                                                                value="viral">
+                                                                            <label for="">viral</label><input
+                                                                                class="form-control" type="text"
+                                                                                name="viralinput" value="">
+                                                                        </div>
+                                                                        <div class=" col-md-12 ">
+                                                                            <input type="checkbox" name="fungalchk"
+                                                                                value="Fungal">
+                                                                            <label for="">Fungal</label><input
+                                                                                class="form-control" type="text"
+                                                                                name="fungalinput" value="">
+                                                                        </div>
+                                                                        <div class=" col-md-12 ">
+                                                                            <input type="checkbox" name="parasiticchk"
+                                                                                value="parasitic">
+                                                                            <label for="">parasitic</label>
+                                                                        </div>
+                                                                        <div class=" col-md-12 ">
+                                                                            <input type="checkbox" name="unknownchk"
+                                                                                value="Unknown">
+                                                                            <label for="">Unknown</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="poorgraftfunctionchk"
+                                                                            value="Rejection/Poor graft function">
+                                                                        <label for="">Rejection/Poor graft function</label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="vodchk"
+                                                                            value="History of severe Veno occlusive disorder (VOD)">
+                                                                        <label for="">
+                                                                            History of severe Veno occlusive disorder (VOD)
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="haemorrhage"
+                                                                            value="Haemorrhage">
+                                                                        <label for="">
+                                                                            Haemorrhage
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="cardiactoxicitychk"
+                                                                            value="Cardiac toxicity">
+                                                                        <label for="">
+                                                                            Cardiac toxicity
+
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="cnschk"
+                                                                            value="Central nervous system (CNS) toxicity">
+                                                                        <label for="">
+                                                                            Central nervous system (CNS) toxicity
+
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="gastrointestinalchk"
+                                                                            value="Gastrointestinal (GI) toxicity">
+                                                                        <label for="">
+                                                                            Gastrointestinal (GI) toxicity
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="skintoxicitychk"
+                                                                            value="Skin toxicity">
+                                                                        <label for="">
+                                                                            Skin toxicity
+
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="renalfailurechk"
+                                                                            value="Renal failure">
+                                                                        <label for="">
+                                                                            Renal failure
+
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="multipleorganchk"
+                                                                            value="Multiple organ failure">
+                                                                        <label for="">
+                                                                            Multiple organ failure
+
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class=" col-md-12 ">
+                                                                        <input type="checkbox" name="otherspecifychk12"
+                                                                            value="Other, specify">
+                                                                        <label for="">
+                                                                            Other, specify
+                                                                        </label>
+                                                                        <input name="contributorycauseofdeath1212others"
+                                                                            type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+        
+                                                    </div>
+                                                    
+                                                </div>
+                                                <button type="submit" class="btn btn-primary"
+                                                id="primary-popover-content" data-container="body"
+                                                data-toggle="popover" title=""
+                                                data-placement="bottom" style="margin-top: 20px; margin-left: 60px;">Submit</button>
+
+
+                                            </div>
+                                            <!-- Page body end -->
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Main-body end -->
+                                <!--<div id="styleSelector">-->
+
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Warning Section Starts -->
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+        <!-- Warning Section Ends -->
+        <!-- Required Jquery -->
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/tether/dist/js/tether.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <!-- jquery slimscroll js -->
+        <script type="text/javascript"
+            src="{% static 'assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+        <!-- modernizr js -->
+        <script type="text/javascript" src="{% static 'assets/plugins/modernizr/modernizr.js' %}"></script>
+        <script type="text/javascript"
+            src="{% static 'assets/plugins/modernizr/feature-detects/css-scrollbars.js' %}"></script>
+
+
+        <!-- Color picker js -->
+        <!--<script type="text/javascript" src="assets/plugins/spectrum/spectrum.js"></script>-->
+        <!--<script type="text/javascript" src="assets/plugins/jscolor/jscolor.js"></script>-->
+        <!-- Mini-color js -->
+        <!--<script type="text/javascript" src="assets/plugins/jquery-minicolors/jquery.minicolors.min.js"></script>-->
+
+        <!-- Custom js -->
+        <script type="text/javascript" src="{% static 'assets/js/script.js' %}"></script>
+        <script src="{% static 'assets/js/pcoded.min.js' %}"></script>
+        <script src="{% static 'assets/js/demo-12.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.mousewheel.min.js' %}"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#search-input').on('input', function () {
+                    var value = $(this).val().toLowerCase();
+                    if (value) {
+                        $('.dropdown-menu').addClass('show');
+                        $('.dropdown-menu a').filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().includes(value));
+                        });
+                    } else {
+                        $('.dropdown-menu').removeClass('show');
+                    }
+                });
+
+                $('#search-input').on('focus', function () {
+                    if ($('#search-input').val().length > 0) {
+                        $('.dropdown-menu').addClass('show');
+                    }
+                });
+
+                $('#search-input').on('blur', function () {
+                    setTimeout(function () {
+                        $('.dropdown-menu').removeClass('show');
+                    }, 200);
+                });
+
+                $('.dropdown-menu a').on('click', function () {
+                    var text = $(this).text();
+                    $('#search-input').val(text);
+                    $('.dropdown-menu').removeClass('show');
+                });
+            });
+        </script>
+        <script>
+            "use strict";
+            $(document).ready(function () {
+
+                // Color picker js start
+                function change_checkbox_color() {
+                    $('.color-box .show-box').on('click', function () {
+                        $(".color-box").toggleClass("open");
+                    });
+
+                    $('.colors-list a').on('click', function () {
+                        var curr_color = $('main').data('checkbox-color');
+                        var color = $(this).data('checkbox-color');
+                        var new_colot = 'checkbox-' + color;
+
+                        $('.rkmd-checkbox .input-checkbox').each(function (i, v) {
+                            var findColor = $(this).hasClass(curr_color);
+
+                            if (findColor) {
+                                $(this).removeClass(curr_color);
+                                $(this).addClass(new_colot);
+                            }
+
+                            $('main').data('checkbox-color', new_colot);
+
+                        });
+                    });
+                }
+
+                // Mini-color js start
+                $('.demo').each(function () {
+                    $(this).minicolors({
+                        control: $(this).attr('data-control') || 'hue',
+                        defaultValue: $(this).attr('data-defaultValue') || '',
+                        format: $(this).attr('data-format') || 'hex',
+                        keywords: $(this).attr('data-keywords') || '',
+                        inline: $(this).attr('data-inline') === 'true',
+                        letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                        opacity: $(this).attr('data-opacity'),
+                        position: $(this).attr('data-position') || 'bottom left',
+                        swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
+                        change: function (value, opacity) {
+                            if (!value) return;
+                            if (opacity) value += ', ' + opacity;
+                            if (typeof console === 'object') {
+                                console.log(value);
+                            }
+                        },
+                        theme: 'bootstrap'
+                    });
+
+                });
+                // Mini-color js ends
+            });
+        </script>
+</body>
+
+</html>

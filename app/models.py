@@ -20,18 +20,22 @@ class CustomUser(AbstractBaseUser):
     USERNAME_FIELD = 'username'
     objects = UserManager()
 
-class Hospital(models.Model):
-    name = models.CharField(max_length=50)
-
 class Patient(models.Model):
+    cid = models.AutoField(primary_key=True, editable=True)
     name = models.CharField(max_length=50)
     national_code = models.CharField(max_length=10) #should be validated
     phone_num = models.CharField(max_length=14)
     mobile_phone_num = models.CharField(max_length=11)
-    hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to ='uploads/')
+    hospital = models.CharField(max_length=50) #hospital names should be revised
+    image = models.ImageField(upload_to ='uploads/') #the quality should be controlled
     address = models.TextField()
+    deleted = models.BooleanField(default=0)
 
-class PatientInfo(models.Model):
-    # patient = models.OneToOneField()
-    pass
+class Form1(models.Model):
+    data = models.JSONField()
+
+class Form2(models.Model):
+    data = models.JSONField()
+
+class Form3(models.Model):
+    data = models.JSONField()

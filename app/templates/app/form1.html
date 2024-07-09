@@ -40,12 +40,23 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/ionicons.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.css' %}">
 
+    <!-- jalali calendar -->
+    <link type="text/css" rel="stylesheet" href="{% static 'jcalendar/jalalidatepicker.min.css' %}" />
+    <script type="text/javascript" src="{% static 'jcalendar/jalalidatepicker.min.js' %}"></script>
+
 </head>
 
 <body>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
     <style>
+        .form-control{
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+            border: none;
+        }
         .dropdown-menu.show {
             display: block;
         }
@@ -408,7 +419,7 @@
                                                     <label for="">
                                                         Date of this report:
                                                     </label>
-                                                    <input class="my_date_picker" type="text" name="dateofthisreport" value="">
+                                                    <input data-jdp class="my_date_picker" type="text" name="dateofthisreport" value="">
                                                 </div>
                                                 <div class=" col-md-6 ">
                                                     <label for="">
@@ -471,7 +482,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="dateofbirth1">Date of birth : </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofbirth" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofbirth" value="">
                                 
                                 
                                                 </div>
@@ -499,7 +510,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis" value="">
                                 
                                 
                                                 </div>
@@ -1867,7 +1878,7 @@
                                                     </div>
                                                     <div class=" col-md-12 ">
                                                         <label for="">Date of birth</label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofbirth3" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofbirth3" value="">
                                                         <label for="">OR Age at time of donation (if date of birth not provided)</label>
                                                         <div class=" col-md-12 ">
                                                             <label for="">
@@ -2126,7 +2137,7 @@
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for="">Last date assessed</label>
-                                                <input type="text" class="form-control my_date_picker " name="lastdateassessed" value="">
+                                                <input data-jdp type="text" class="form-control my_date_picker " name="lastdateassessed" value="">
                                             </div>
                                             <div class=" col-md-12 "><label for="">If &gt;۱, type of last HSCT before this one </label></div>
                                             <div class=" col-md-12 ">
@@ -3151,7 +3162,7 @@
                                                 <label for="">
                                                     Other, specify
                                                 </label>
-                                                <input class="form-control my_date_picker " type="text" name="drugsimmunosuppressivechemooos" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="drugsimmunosuppressivechemooos" value="">
                                             </div>
                                             <div class=" col-md-12 pl-5">
                                                 <input type="radio" name="drugsimmunosuppressivechemoo" value="Anti CD25 (MoAB in vivo)">
@@ -3432,7 +3443,7 @@
                                             <div class=" col-md-12 ">
                                 
                                                 Date of Initial Diagnosis
-                                                <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1" value="">
                                 
                                             </div>
                                             <div class=" col-md-12 ">
@@ -4708,7 +4719,7 @@
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for=""> Date of this HSCT</label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofthishsct3434" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct3434" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <table class="table table-bordered tablse-striped">
@@ -4842,7 +4853,7 @@
                                                     Date of last relapse before this HSCT:
                                 
                                                 </label>
-                                                <input class="form-control my_date_picker " type="text" name="dateoflastrelapsebeforethishsctwerwerwer" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateoflastrelapsebeforethishsctwerwerwer" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for="">
@@ -4888,7 +4899,7 @@
                                                     
                                                     <div id="jjj90">
                                                     <label for="1">Yes Date of treatment  </label>
-                                                    <input class="form-control my_date_picker " type="text" name="treatmentprehsctayes" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="treatmentprehsctayes" value="">
                                 </div>
                                                 </div>
                                                 <div class=" col-md-12 ">
@@ -5071,7 +5082,7 @@
                                         </div>
                                         <div class=" col-md-12 ">
                                             <label for=""> Date of this HSCT</label>
-                                            <input class="form-control my_date_picker " type="text" name="dateofthishsct11478" value="">
+                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct11478" value="">
                                         </div>
                                         <div class=" col-md-12 "></div> <br>
                                         <div class=" col-md-12 ">
@@ -5225,7 +5236,7 @@
                                                     Date of initial diagnosis:
                                 
                                                 </label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosi657654" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosi657654" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for="">
@@ -6188,7 +6199,7 @@
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for=""> Date of this HSCT</label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofthishsct" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <table class="table table-bordered tablse-striped">
@@ -6355,7 +6366,7 @@
                                                     
                                                     <div id="hhj9034">
                                                     <label for="1">Yes Date of treatment  </label>
-                                                    <input class="form-control my_date_picker " type="text" name="treatmentprehsctayes" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="treatmentprehsctayes" value="">
                                 </div>
                                                 </div>
                                                 <div class=" col-md-12 ">
@@ -6538,7 +6549,7 @@
                                         </div>
                                         <div class=" col-md-12 ">
                                             <label for=""> Date of this HSCT</label>
-                                            <input class="form-control my_date_picker " type="text" name="dateofthishsct11478" value="">
+                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct11478" value="">
                                         </div>
                                         <div class=" col-md-12 "></div> <br>
                                         <div class=" col-md-12 ">
@@ -6692,7 +6703,7 @@
                                             <div class=" col-md-12 ">
                                 
                                                 Date of Initial Diagnosis
-                                                <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis22" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis22" value="">
                                 
                                             </div>
                                             <div class=" col-md-12 ">
@@ -6774,7 +6785,7 @@
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for=""> Date of this HSCT</label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofthishsct456" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct456" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <table class="table table-bordered tablse-striped">
@@ -6926,7 +6937,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis33" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis33" value="">
                                 
                                 
                                             </div>
@@ -6957,7 +6968,7 @@
                                                         <label for="1">
                                                             Yes:  Date of original CLL diagnosis
                                                         </label>
-                                                        <input class="form-control my_date_picker " type="text" name="hsctdate2" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="hsctdate2" value="">
                                                     </div>
                                                     <div class=" col-md-12 ">
                                                         <input type="radio" name="1" value="No:  Primary Richter">
@@ -7138,7 +7149,7 @@
                                                 <div class=" col-md-12 ">
                                                     <input type="radio" name="treatmentprehsctprimarytreatment" value="Yes Date Treatment started">
                                                     <label for="1">Yes Date Treatment started  </label>
-                                                    <input class="form-control my_date_picker " type="text" name="treatmentprehsctprimarytreatmentdate" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="treatmentprehsctprimarytreatmentdate" value="">
                                 
                                                 </div>
                                                 <div class=" col-md-12 ">
@@ -7151,10 +7162,10 @@
                                                         <input class="form-control " type="text" name="regtreatmentprehsctprimarytreatment" value="">
                                                     </div>
                                                     <div class="form-group col-md-4 ">
-                                                        <input class="form-control my_date_picker " type="text" name="dsregtreatmentprehsctprimarytreatment" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dsregtreatmentprehsctprimarytreatment" value="">
                                                     </div>
                                                     <div class="form-group col-md-4 ">
-                                                        <input class="form-control my_date_picker " type="text" name="deregtreatmentprehsctprimarytreatment" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="deregtreatmentprehsctprimarytreatment" value="">
                                                     </div>
                                                 </div>
                                                
@@ -7165,7 +7176,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for=""> Date of this HSCT</label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct124" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct124" value="">
                                                 </div>
                                                 <div class=" col-md-12 "></div>
                                                 <br>
@@ -7249,7 +7260,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for=""> Date of Initial Diagnosis</label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct8564" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct8564" value="">
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <input type="radio" name="prolymphocyticleukaemiaspllother" value="Prolymphocytic Leukaemia (PLL)">
@@ -7458,7 +7469,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for="1">Date of this HSCT </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct116" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct116" value="">
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for="1">STATUS: </label>
@@ -7524,7 +7535,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for="1">Date of this HSCT </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct1978" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct1978" value="">
                                                 </div>
                                                 <div class=" col-md-12 "></div>
                                                 <br>
@@ -7895,7 +7906,7 @@
                                                                 <br>
                                                                 <input type="radio" name="transformedfromanothertypeoflymphoma" value="Yes">
                                                                 <label for="1">Yes</label>
-                                                                <input class="form-control my_date_picker " type="text" name="transformedfromanothertypeoflymphomay" value="">
+                                                                <input data-jdp class="form-control my_date_picker " type="text" name="transformedfromanothertypeoflymphomay" value="">
                                                                 <div class="col-md-12">
                                                                     <label for="">Indicate the type of the original lymphoma</label>
                                                                     <input class="form-control " type="text" name="indicatethetypeoftheoriginallymphoma" value="">
@@ -7929,7 +7940,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis44" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis44" value="">
                                                 </div>
                                                 <div class=" col-md-12 "></div>
                                                 <br>
@@ -8160,7 +8171,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis55" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis55" value="">
                                 
                                 
                                                 </div>
@@ -8221,7 +8232,7 @@
                                                 <div class=" col-md-12 ">
                                                     <input type="radio" name="treatmentprehscta" value="Yes">
                                                     <label for="1">Yes Date of treatment  </label>
-                                                    <input class="form-control my_date_picker " type="text" name="treatmentprehsctayes" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="treatmentprehsctayes" value="">
                                 
                                                 </div>
                                                 <div class=" col-md-12 ">
@@ -8404,7 +8415,7 @@
                                         </div>
                                         <div class=" col-md-12 ">
                                             <label for=""> Date of this HSCT</label>
-                                            <input class="form-control my_date_picker " type="text" name="dateofthishsct11478" value="">
+                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct11478" value="">
                                         </div>
                                         <div class=" col-md-12 "></div> <br>
                                         <div class=" col-md-12 ">
@@ -8565,7 +8576,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for=""> Date of this HSCT</label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct12706" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct12706" value="">
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <input type="radio" name="chromosomeanalysisatanytimebeforehsct" value="Normal">
@@ -8889,7 +8900,7 @@
                                                         Date of initial diagnosis:
                                 
                                                     </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis66" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis66" value="">
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for="">
@@ -9454,7 +9465,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for=""> Date of this HSCT</label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct1197654" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct1197654" value="">
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for="">
@@ -9675,7 +9686,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis77" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis77" value="">
                                 
                                 
                                                 </div>
@@ -10105,7 +10116,7 @@
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for=""> Date of this HSCT</label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct10984" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct10984" value="">
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <label for="">
@@ -10263,7 +10274,7 @@
                                                         Date of initial diagnosis:
                                 
                                                     </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis88" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis88" value="">
                                                 </div>
                                                 <div class=" col-md-12 ">
                                                     <input type="radio" name="myeloproliferativeneoplasmsmpnmaindiseasecode1t2" value="Primary myelofibrosis (Chronic idiopathic myelofibrosis; fibrosis with myeloid metaplasia)">
@@ -10733,7 +10744,7 @@
                                                     Date of initial HSCT:
                                 
                                                 </label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofinitialdihsct" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdihsct" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for="">
@@ -10807,7 +10818,7 @@
                                                 <label for="">
                                                     Transformed to myelofibrosis from PV/ET: Date of transformation
                                                 </label>
-                                                <input class="form-control my_date_picker" type="text" name="dateoftransformationwhoclassificationathsct6777" value="">
+                                                <input data-jdp class="form-control my_date_picker" type="text" name="dateoftransformationwhoclassificationathsct6777" value="">
                                 
                                             </div>
                                             <div class=" col-md-12 ">
@@ -10815,7 +10826,7 @@
                                                 <label for="">
                                                     Transformed to AML: Date of transformation
                                                 </label>
-                                                <input class="form-control my_date_picker " type="text" name="whoclassificationathsct6777dateoftransformation" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="whoclassificationathsct6777dateoftransformation" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                                                               <div class="alert alert-info " style="background-color:#23282d;">
@@ -10957,7 +10968,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis13" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis13" value="">
                                 
                                 
                                             </div>
@@ -11421,7 +11432,7 @@
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <label for=""> Date of this HSCT</label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofthishsct17765" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct17765" value="">
                                             </div>
                                             <div class=" col-md-12 ">
                                                 <table style="width: 100%;" class="table table-bordered tablse-striped">
@@ -11522,7 +11533,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis18" value="">
+                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis18" value="">
                                 
                                 
                                             </div>
@@ -11637,7 +11648,7 @@
                                 
                                                 <div class="form-group col-md-6">
                                                     <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis199" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis199" value="">
                                 
                                 
                                                 </div>
@@ -11710,7 +11721,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1953" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1953" value="">
                                 
                                 
                                                     </div>
@@ -11751,7 +11762,7 @@
                                                 <div class=" col-md-12 ">
                                 
                                                     Date of Initial Diagnosis
-                                                    <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1409" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1409" value="">
                                 
                                                 </div>
                                                 <div class=" col-md-12 ">
@@ -12140,7 +12151,7 @@
                                                     <div class=" col-md-12 ">
                                 
                                                         Status At HSCT:
-                                                        <input class="form-control my_date_picker " type="text" name="statusathsct2323" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="statusathsct2323" value="">
                                 
                                                     </div>
                                                     <div class=" col-md-12 ">
@@ -12355,7 +12366,7 @@
                                                             Date of initial diagnosis:
                                 
                                                         </label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis56709" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis56709" value="">
                                                     </div>
                                                     <div class=" col-md-12 ">
                                                         <label for="">
@@ -12560,7 +12571,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct188989" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct188989" value="">
                                 
                                 
                                                     </div>
@@ -12577,7 +12588,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of initial diagnosis:</label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis113" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis113" value="">
                                 
                                 
                                                     </div>
@@ -12835,7 +12846,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct2479" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct2479" value="">
                                 
                                 
                                                     </div>
@@ -12860,7 +12871,7 @@
                                                     <div class=" col-md-12 ">
                                 
                                                         Date of Initial Diagnosis
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis11368" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis11368" value="">
                                 
                                                     </div>
                                                     <div class=" col-md-12 ">
@@ -12899,7 +12910,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct19089" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct19089" value="">
                                 
                                 
                                                     </div>
@@ -12929,7 +12940,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1675" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis1675" value="">
                                 
                                 
                                                     </div>
@@ -12986,7 +12997,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct1896" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct1896" value="">
                                 
                                 
                                                     </div>
@@ -13013,7 +13024,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis19074" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis19074" value="">
                                 
                                 
                                                     </div>
@@ -13072,7 +13083,7 @@
                                 
                                                                         </label>
                                 
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation789" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation789" value="">
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <label for="">
@@ -13147,7 +13158,7 @@
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct1258" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct1258" value="">
                                 
                                 
                                                                     </div>
@@ -13174,7 +13185,7 @@
                                 
                                                                         </label>
                                 
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation12c6" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation12c6" value="">
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <label for="">SLEDAI Score</label>
@@ -13182,7 +13193,7 @@
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct344646" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct344646" value="">
                                                                     </div>
                                                                 </th>
                                                             </tr>
@@ -13229,7 +13240,7 @@
                                                     <div class=" col-md-12 ">
                                 
                                                         Date of Initial Diagnosis
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis18765" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis18765" value="">
                                 
                                                     </div>
                                                     <div class="col-md-12">
@@ -13318,7 +13329,7 @@
                                                                     <br>
                                                                     <div class="form-group col-md-6">
                                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct1194" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct1194" value="">
                                 
                                 
                                                                     </div>
@@ -13349,7 +13360,7 @@
                                 
                                                                         </label>
                                 
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation32323" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation32323" value="">
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <label for="">Status at mobilisation: </label>
@@ -13432,7 +13443,7 @@
                                 
                                                                     <div class=" col-md-12 ">
                                                                         <label for=""> Date of this HSCT</label>
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct167" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct167" value="">
                                                                     </div>
                                                                 </th>
                                                             </tr>
@@ -13455,7 +13466,7 @@
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="dateofinitialdiagnosis">Date of initial diagnosis: </label>
-                                                        <input class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis09876" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofinitialdiagnosis09876" value="">
                                                     </div>
                                                     <div class=" col-md-12 ">
                                                         <label for="">HAEMATOLOGICAL DISEASES</label>
@@ -13487,7 +13498,7 @@
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label for="dateofinitialdiagnosis">Date of this HSCT:</label>
-                                                                        <input class="form-control my_date_picker " type="text" name="dateofthishsct1976" value="">
+                                                                        <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct1976" value="">
                                                                     </div>
                                                                 </th>
                                                             </tr>
@@ -13512,7 +13523,7 @@
                                 
                                                                                 </label>
                                 
-                                                                                <input class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation4341" value="">
+                                                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofthefirstmobilisation4341" value="">
                                                                             </div>
                                                                             <div class="col-md-12">
                                                                                 <label for="">CDAI (۰-۷۰۰)</label> <input type="text" name="statusatmobilisationcdai" value="">
@@ -13535,7 +13546,7 @@
                                                                             <br>
                                 
                                                                             <label for=""> Date of this HSCT</label>
-                                                                            <input class="form-control my_date_picker " type="text" name="dateofthishsct187645" value="">
+                                                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct187645" value="">
                                 
                                                                         </div>
                                                                     </div>
@@ -13566,7 +13577,7 @@
                                                                     </label><input type="text" name="otherautoimmune2323123other" value="">
                                                                     <br>
                                                                     <label for=""> Date of this HSCT</label>
-                                                                    <input class="form-control my_date_picker " type="text" name="dateofthishsct1158" value="">
+                                                                    <input data-jdp class="form-control my_date_picker " type="text" name="dateofthishsct1158" value="">
                                 
                                                                 </th>
                                                             </tr>
@@ -13610,7 +13621,7 @@
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="primarydiseasediagnosis">PRIMARY DISEASE DIAGNOSIS :</label>
-                                                    <input class="form-control my_date_picker " type="text" name="primarydiseasediagnosis553434" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="primarydiseasediagnosis553434" value="">
                                                 </div>
                                                 <div class="alert alert-info " style="background-color:#23282d;">
                                                     Centre Identification
@@ -13630,11 +13641,11 @@
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="unit">Units :</label>
-                                                        <input class="form-control my_date_picker " type="text" name="unit23342" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="unit23342" value="">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="email">Email :</label>
-                                                        <input class="form-control my_date_picker " type="text" name="email234234" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="email234234" value="">
                                                     </div>
                                                 </div>
                                                 <div class="alert alert-info " style="background-color:#23282d;">
@@ -13644,11 +13655,11 @@
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="dateofthisreport">Date of this report :</label>
-                                                            <input class="my_date_picker" type="text" name="dateofthisreport454545" value="">
+                                                            <input data-jdp class="my_date_picker" type="text" name="dateofthisreport454545" value="">
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="hospitaluniquepatientnumbercode">Hospital Unique Patient Number/ Code :</label>
-                                                            <input class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode343" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode343" value="">
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="">
@@ -13658,13 +13669,13 @@
                                 
                                                         <div class="form-group col-md-12">
                                                             <label for="hospitaluniquepatientnumbercode">Hospital Unique Patient Number/ Code :</label>
-                                                            <input class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode454" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode454" value="">
                                                             <label for=""> (first name(s) _family name(s)) </label>
                                 
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="dateofbirth">Date of birth : </label>
-                                                            <input class="form-control my_date_picker " type="text" name="dateofbirth645" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofbirth645" value="">
                                 
                                 
                                                         </div>
@@ -13686,7 +13697,7 @@
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="dateofthetransplant">Date of the transplant : </label>
-                                                            <input class="form-control my_date_picker" type="text" name="dateofthetransplant6343" value="">
+                                                            <input data-jdp class="form-control my_date_picker" type="text" name="dateofthetransplant6343" value="">
                                 
                                 
                                                         </div>
@@ -13705,14 +13716,14 @@
                                                                 <label for="0">No :</label>
                                 
                                                                 <label for="dateoflastassessment">Date of last assessment:</label>
-                                                                <input type="text" class="form-control my_date_picker " name="absoluteneutrophilcountanc3434no" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="absoluteneutrophilcountanc3434no" value="">
                                                             </div>
                                                             <div class="form-group col-md-8">
                                                                 <input type="radio" name="absoluteneutrophilcountanc3434" value="Yes :">
                                                                 <label for="1">Yes :</label>
                                 
                                                                 <label for="dateofancrecovery">Date of ANC recovery:</label>
-                                                                <input type="text" class="form-control my_date_picker " name="absoluteneutrophilcountanc3434yes" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="absoluteneutrophilcountanc3434yes" value="">
                                                             </div>
                                                             <div class="form-group col-md-8">
                                                                 <input type="radio" name="absoluteneutrophilcountanc3434" value="Never below :">
@@ -13748,7 +13759,7 @@
                                                                     <label for="">Yes : </label>
                                 
                                                                     <label for="">Date Platelets ≥ ۲۰ x ۱۰ /l:</label>
-                                                                    <input type="text" class="form-control my_date_picker " name="plateletreconstitution32323yes" value="">
+                                                                    <input data-jdp type="text" class="form-control my_date_picker " name="plateletreconstitution32323yes" value="">
                                                                 </div>
                                                                 <div class="form-group col-md-8">
                                                                     <input type="radio" name="plateletreconstitution32323" value="Never below this level">
@@ -13860,7 +13871,7 @@
                                                             </div>
                                                             <div class="form-group col-md-5">
                                                                 <label for="dateofonset">Date of onset :</label>
-                                                                <input type="text" class="form-control my_date_picker " name="dateofonset32355" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="dateofonset32355" value="">
                                                             </div>
                                                             <div class="form-group col-md-12">
                                 
@@ -14032,7 +14043,7 @@
                                                                 <label for="firstdateofthecelltherapyinfusion">
                                                                     First date of the cell therapy infusion
                                                                 </label>
-                                                                <input type="text" class="form-control my_date_picker " name="firstdateofthecelltherapyinfusion509" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="firstdateofthecelltherapyinfusion509" value="">
                                                             </div>
                                                             <div class="form-group col-md-12">
                                                                 <label for="">Source of cell(s)  : </label>
@@ -14197,7 +14208,7 @@
                                                             </div>
                                                             <div class="form-group col-md-12">
                                                                 <label for="">Date started</label>
-                                                                <input type="text" class="form-control my_date_picker " name="datestarted45654456" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="datestarted45654456" value="">
                                                             </div>
                                                             <div class="form-group col-md-12">
                                                                 <label for="">Chemo/drug</label>
@@ -14392,7 +14403,7 @@
                                                                     CR achieved: Date achieved :
                                 
                                                                 </label>
-                                                                <input type="text" class="form-control my_date_picker " name="bestdiseasestatusresponseafterhsct12date" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="bestdiseasestatusresponseafterhsct12date" value="">
                                 
                                                             </div>
                                 
@@ -14402,7 +14413,7 @@
                                                                     Never in CR : Date assessed:
                                 
                                                                 </label>
-                                                                <input type="text" class="form-control my_date_picker " name="bestdiseasestatusresponseafterhsct12date2" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="bestdiseasestatusresponseafterhsct12date2" value="">
                                 
                                                             </div>
                                                             <div class="form-group col-md-12">
@@ -14423,7 +14434,7 @@
                                                                     Day ۱۰۰ assessment :
                                 
                                                                 </label>
-                                                                <input type="text" class="form-control my_date_picker " name="dayassessment56546" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="dayassessment56546" value="">
                                 
                                                             </div>
                                                             <div class="form-group col-md-12">
@@ -14432,7 +14443,7 @@
                                                                     Date of death (if before day ۱۰۰):
                                 
                                                                 </label>
-                                                                <input type="text" class="form-control my_date_picker " name="dateofdeath90995" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="dateofdeath90995" value="">
                                 
                                                             </div>
                                 
@@ -14462,7 +14473,7 @@
                                                                     Yes :Date of diagnosis of cGvHD:
                                 
                                                                 </label>
-                                                                <input type="text" class="form-control my_date_picker " name="chronicgraftversushostdiseasepr12344date" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="chronicgraftversushostdiseasepr12344date" value="">
                                 
                                                             </div>
                                 
@@ -14543,7 +14554,7 @@
                                                             <div class=" col-md-12 ">
                                                                 <input type="radio" name="firstrelapseorprogressionafterhsct456" value="Yes: Date first seen">
                                                                 <label for="">Yes: Date first seen</label>
-                                                                <input type="text" class="form-control my_date_picker " name="firstrelapseorprogressionafterhsct456datey" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="firstrelapseorprogressionafterhsct456datey" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <input type="radio" name="firstrelapseorprogressionafterhsct456" value="Continuous progression since HSCT">
@@ -14554,16 +14565,16 @@
                                                             <div class=" col-md-12 "><label for="">Method of detection of the first relapse or progression after HSCT</label></div>
                                                             <div class=" col-md-12 "><label for="">Fill in only for acute and chronic leukaemias</label></div>
                                                             <div class=" col-md-12 "><label for="">Relapse/progression detected by method: </label></div>
-                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod34343" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod34343dn" value="">  </div>
-                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod34343" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod34343dy" value="">  </div>
+                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod34343" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod34343dn" value="">  </div>
+                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod34343" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod34343dy" value="">  </div>
                                                             <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod34343" value="Not evaluated"><label for="">Not evaluated   </label></div>
                                                             <div class=" col-md-12"><label for="">Relapse/progression detected by method: cytogenetic</label></div>
-                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethodcytogenetic323" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethodcytogenetic323dn" value="">  </div>
-                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethodcytogenetic323" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethodcytogenetic323dy" value="">  </div>
+                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethodcytogenetic323" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethodcytogenetic323dn" value="">  </div>
+                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethodcytogenetic323" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethodcytogenetic323dy" value="">  </div>
                                                             <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethodcytogenetic323" value="Not evaluated"><label for="">Not evaluated   </label></div>
                                                             <div class=" col-md-12"><label for="">Relapse/progression detected by method</label></div>
-                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod5454" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod5454dn" value="">  </div>
-                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod5454" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod5454dy" value="">  </div>
+                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod5454" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod5454dn" value="">  </div>
+                                                            <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod5454" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod5454dy" value="">  </div>
                                                             <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod5454" value="Not evaluated"><label for="">Not evaluated   </label></div>
                                                             <div class="alert alert-info  col-md-12" style="background-color:#23282d;">
                                                                 Disease assessment at ۱۰۰ days (All diseases)
@@ -14583,7 +14594,7 @@
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <label for="">Last date assessed</label>
-                                                                <input type="text" class="form-control my_date_picker " name="lastdateassessed3434234" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="lastdateassessed3434234" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                 
@@ -14617,7 +14628,7 @@
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <label for="">Last date assessed</label>
-                                                                <input type="text" class="form-control my_date_picker " name="dateoflastassessment34334" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="dateoflastassessment34334" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <input type="radio" name="wasdiseasedetectedbymethodwhenthepatientwas545" value="Not evaluated since HSCT was done">
@@ -14645,7 +14656,7 @@
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <label for="">Last date assessed</label>
-                                                                <input type="text" class="form-control my_date_picker " name="lastdateassessed9075" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="lastdateassessed9075" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <input type="radio" name="wasdiseasedetectedbymethodwhenthepatientwaslastasses4545" value="Not evaluated since HSCT was done">
@@ -14814,7 +14825,7 @@
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="primarydiseasediagnosis">PRIMARY DISEASE DIAGNOSIS :</label>
-                                                    <input class="form-control my_date_picker " type="text" name="primarydiseasediagnosis76432" value="">
+                                                    <input data-jdp class="form-control my_date_picker " type="text" name="primarydiseasediagnosis76432" value="">
                                                 </div>
                                                 <div class="alert alert-info " style="background-color:#23282d;">
                                                     Centre Identification
@@ -14834,11 +14845,11 @@
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="unit">Units :</label>
-                                                        <input class="form-control my_date_picker " type="text" name="unit77435" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="unit77435" value="">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="email">Email :</label>
-                                                        <input class="form-control my_date_picker " type="text" name="email96564" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="email96564" value="">
                                                     </div>
                                                 </div>
                                                 <div class="alert alert-info " style="background-color:#23282d;">
@@ -14848,11 +14859,11 @@
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="dateofthisreport">Date of this report :</label>
-                                                            <input class="form-control my_date_picker " type="text" name="dateofthisreport7443545" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofthisreport7443545" value="">
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="hospitaluniquepatientnumbercode">Hospital Unique Patient Number/ Code :</label>
-                                                            <input class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode4553" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode4553" value="">
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="">
@@ -14862,13 +14873,13 @@
                                 
                                                         <div class="form-group col-md-12">
                                                             <label for="hospitaluniquepatientnumbercode">Hospital Unique Patient Number/ Code :</label>
-                                                            <input class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="hospitaluniquepatientnumbercode" value="">
                                                             <label for=""> (first name(s) _family name(s)) </label>
                                 
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="dateofbirth">Date of birth : </label>
-                                                            <input class="form-control my_date_picker " type="text" name="dateofbirth55334" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofbirth55334" value="">
                                 
                                 
                                                         </div>
@@ -14890,7 +14901,7 @@
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="dateofthetransplant">Date of the transplant : </label>
-                                                            <input class="form-control my_date_picker " type="text" name="dateofthetransplant5399" value="">
+                                                            <input data-jdp class="form-control my_date_picker " type="text" name="dateofthetransplant5399" value="">
                                 
                                 
                                                         </div>
@@ -14905,7 +14916,7 @@
                                                         <div class=" row">
                                                             <div class="form-group col-md-6">
                                                                 <label for="dateoflastfollowupordeath">Date of last follow up or death : </label>
-                                                                <input class="form-control my_date_picker " type="text" name="dateoflastfollowupordeath4653" value="">
+                                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateoflastfollowupordeath4653" value="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -14934,14 +14945,14 @@
                                                         <label for="">
                                                             CR achieved: Date achieved :
                                                         </label>
-                                                        <input class="form-control my_date_picker " type="text" name="hsctdate3" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="hsctdate3" value="">
                                                     </div>
                                                     <div class=" col-md-12 ">
                                                         <input type="radio" name="bestdiseasestatusresponseaftertransplant54" value="Never in CR: Date assessed:">
                                                         <label for="">
                                                             Never in CR: Date assessed:
                                                         </label>
-                                                        <input class="form-control my_date_picker " type="text" name="neverincrdateassessed4" value="">
+                                                        <input data-jdp class="form-control my_date_picker " type="text" name="neverincrdateassessed4" value="">
                                                     </div>
                                                     <div class=" col-md-12 ">
                                                         <input type="radio" name="bestdiseasestatusresponseaftertransplant54" value="Previously reported">
@@ -15007,7 +15018,7 @@
                                                                 </div>
                                                                 <div class="form-group col-md-5">
                                                                     <label for="dateofonset">Date of onset :</label>
-                                                                    <input type="text" class="form-control my_date_picker " name="dateofonset345378" value="">
+                                                                    <input data-jdp type="text" class="form-control my_date_picker " name="dateofonset345378" value="">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                 
@@ -15140,7 +15151,7 @@
                                                                         <label>
                                                                             Date of diagnosis of cGvHD:
                                                                         </label>
-                                                                        <input type="text" class="form-control my_date_picker " name="chronicgraftversushostdiseasepresentduringthi333date" value="">
+                                                                        <input data-jdp type="text" class="form-control my_date_picker " name="chronicgraftversushostdiseasepresentduringthi333date" value="">
                                                                     </div>
                                                                     <br>
                                                                     <input type="radio" name="chronicgraftversushostdiseasepresentduringthi333y" value="Recurrence">
@@ -15152,7 +15163,7 @@
                                                                         <label>
                                                                             Date first evidence of cGVHD during this period:
                                                                         </label>
-                                                                        <input type="text" class="form-control my_date_picker " name="chronicgraftversushostdiseasepresentduringthi333ydtre" value="">
+                                                                        <input data-jdp type="text" class="form-control my_date_picker " name="chronicgraftversushostdiseasepresentduringthi333ydtre" value="">
                                                                     </div>
                                                                     <br>
                                                                     <input type="radio" name="chronicgraftversushostdiseasepresentduringthi333y" value="Continuous since last reported episode">
@@ -15250,7 +15261,7 @@
                                                                     Date of diagnosis 
                                 
                                                                 </label>
-                                                                <input type="text" class="form-control my_date_picker " name="dateofdiagnosisy565664" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="dateofdiagnosisy565664" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <label for="">Diagnosis</label>
@@ -15283,7 +15294,7 @@
                                                                 <label for="">
                                                                     Yes  :Start date of the additional treatment since last report
                                                                 </label>
-                                                                <input class="form-control my_date_picker " type="text" name="startdateoftheadditionaltreatmentsincelastreport4341" value="">
+                                                                <input data-jdp class="form-control my_date_picker " type="text" name="startdateoftheadditionaltreatmentsincelastreport4341" value="">
                                                             </div>
                                                             <div class="form-group col-md-12">
                                                                 <label style="font-size:12px;" for="">-Cell therapy</label>
@@ -15362,7 +15373,7 @@
                                                                             </div>
                                                                             <div class="form-group col-md-12">
                                                                                 <label for="">Date started</label>
-                                                                                <input type="text" class="form-control my_date_picker " name="datestarted345676543456" value="">
+                                                                                <input data-jdp type="text" class="form-control my_date_picker " name="datestarted345676543456" value="">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -15560,7 +15571,7 @@
                                                                 <div id="hhj9034d">
                                                                     <input type="radio" name="2" value="Yes: Date first seen">
                                                                     <label for="">Yes: Date first seen</label>
-                                                                    <input type="text" class="form-control my_date_picker " name="datefirstseen1903452" value="">
+                                                                    <input data-jdp type="text" class="form-control my_date_picker " name="datefirstseen1903452" value="">
                                                                     
                                                                     </div>
                                                                
@@ -15600,8 +15611,8 @@
                                                             <div class="col-md-12" style="border: 1px solid;">
                                                                 <label for="">Relapse/progression detected by method: clinical/haematological
                                                                 </label>
-                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod18654" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod18654dn" value="">  </div>
-                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod18654" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod18654dy" value="">  </div>
+                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod18654" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod18654dn" value="">  </div>
+                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod18654" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod18654dy" value="">  </div>
                                                                 <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod18654" value="Not evaluated"><label for="">Not evaluated   </label></div>
                                                             </div>
                                                             <div class="col-md-12"></div>
@@ -15609,8 +15620,8 @@
                                                             <div class="col-md-12" style="border: 1px solid;">
                                                                 <label for="">Relapse/progression detected by method: cytogenetic
                                                                 </label>
-                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod17689" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod17689dn" value="">  </div>
-                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod17689" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod17689dy" value="">  </div>
+                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod17689" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod17689dn" value="">  </div>
+                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod17689" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod17689dy" value="">  </div>
                                                                 <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod17689" value="Not evaluated"><label for="">Not evaluated   </label></div>
                                                             </div>
                                                             <div class="col-md-12"></div>
@@ -15618,8 +15629,8 @@
                                                             <div class="col-md-12" style="border: 1px solid;">
                                                                 <label for="">Relapse/progression detected by method:
                                                                 </label>
-                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod19016" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod19016dn" value="">  </div>
-                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod19016" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod19016dy" value="">  </div>
+                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod19016" value="NO: Date assessed"><label for="">NO: Date assessed </label>  <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod19016dn" value="">  </div>
+                                                                <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod19016" value="Yes: Date first seen"><label for="">Yes: Date first seen  </label> <input data-jdp type="text" class="form-control my_date_picker " name="relapseprogressiondetectedbymethod19016dy" value="">  </div>
                                                                 <div class=" col-md-12 "><input type="radio" name="relapseprogressiondetectedbymethod19016" value="Not evaluated"><label for="">Not evaluated   </label></div>
                                                             </div>
                                                             <div class="col-md-12"></div>
@@ -15650,7 +15661,7 @@
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <label for="">Last date assessed</label>
-                                                                <input type="text" class="form-control my_date_picker " name="lastdateassessed506" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="lastdateassessed506" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                 
@@ -15678,7 +15689,7 @@
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <label for="">Last date assessed</label>
-                                                                <input type="text" class="form-control my_date_picker " name="lastdateassessed9561" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="lastdateassessed9561" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                 
@@ -15703,7 +15714,7 @@
                                                             </div>
                                                             <div class=" col-md-12 ">
                                                                 <label for="">Last date assessed</label>
-                                                                <input type="text" class="form-control my_date_picker " name="lastdateassessed1490" value="">
+                                                                <input data-jdp type="text" class="form-control my_date_picker " name="lastdateassessed1490" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                 
@@ -15938,7 +15949,7 @@
                                                                 <label for="">
                                                                     Date of first infusion:
                                                                 </label>
-                                                                <input class="form-control my_date_picker " type="text" name="dateofthisreport4567870" value="">
+                                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofthisreport4567870" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                 
@@ -16087,7 +16098,7 @@
                                                                 <label for="">
                                                                     Date of first infusion:
                                                                 </label>
-                                                                <input class="form-control my_date_picker " type="text" name="dateofthisreport34234234" value="">
+                                                                <input data-jdp class="form-control my_date_picker " type="text" name="dateofthisreport34234234" value="">
                                                             </div>
                                                             <div class=" col-md-12 ">
                                 
@@ -16492,6 +16503,10 @@
                 });
                 // Mini-color js ends
             });
+        </script>
+
+        <script>
+            jalaliDatepicker.startWatch();
         </script>
 
 </body>

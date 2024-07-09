@@ -41,10 +41,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/ionicons.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.css' %}">
 
+    <!-- jalali calendar -->
+    <link type="text/css" rel="stylesheet" href="{% static 'jcalendar/jalalidatepicker.min.css' %}" />
+    <script type="text/javascript" src="{% static 'jcalendar/jalalidatepicker.min.js' %}"></script>
+    
 </head>
 
 <body>
     <style>
+        .form-control{
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+            border: none;
+        }
         .dropdown-menu.show {
             display: block;
         }
@@ -350,7 +361,7 @@
                                                             </div>
                                                             <div class="form-group col-md-3">
                                                                 <label for="hsctdate">HSCT Date :</label>
-                                                                <input class="form-control my_date_picker " type="text"
+                                                                <input data-jdp class="form-control my_date_picker " type="text"
                                                                     name="hsctdate" value="">
                                                             </div>
                                                         </div>
@@ -408,7 +419,7 @@
                                                             <div class="form-group col-md-6">
                                                                 <label for="dateofthisreport">Date of this report
                                                                     :</label>
-                                                                <input class="form-control my_date_picker " type="text"
+                                                                <input data-jdp class="form-control my_date_picker " type="text"
                                                                     name="dateofthisreport" value="">
                                                             </div>
 
@@ -451,7 +462,7 @@
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                                 <label for="dateofbirth">Date of birth : </label>
-                                                                <input class="form-control my_date_picker " type="text"
+                                                                <input data-jdp class="form-control my_date_picker " type="text"
                                                                     name="dateofbirth" value="">
 
 
@@ -466,17 +477,17 @@
                                                             </div>
                                                             <div class="form-group col-md-3">
                                                                 <label for="male">Male :</label>
-                                                                <input type="radio" name="male" value="Male">
+                                                                <input type="radio" name="sexradio" value="Male">
 
                                                                 <label for="female">Female :</label>
-                                                                <input type="radio" name="female" value="Female">
+                                                                <input type="radio" name="sexradio" value="Female">
 
                                                                 <label for="">(at birth)</label>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                                 <label for="dateofthetransplant">Date of the transplant
                                                                     : </label>
-                                                                <input class="form-control my_date_picker " type="text"
+                                                                <input data-jdp class="form-control my_date_picker " type="text"
                                                                     name="dateofthetransplant" value="">
 
 
@@ -493,7 +504,7 @@
                                                                 <div class="form-group col-md-6">
                                                                     <label for="dateoflastfollowupordeath">Date of last
                                                                         follow up or death : </label>
-                                                                    <input class="form-control my_date_picker "
+                                                                    <input data-jdp class="form-control my_date_picker "
                                                                         type="text" name="dateoflastfollowupordeath"
                                                                         value="">
                                                                 </div>
@@ -529,7 +540,7 @@
                                                             <label for="">
                                                                 CR achieved: Date achieved :
                                                             </label>
-                                                            <input class="form-control my_date_picker " type="text"
+                                                            <input data-jdp class="form-control my_date_picker " type="text"
                                                                 name="bestdiseasestatusresponseaftertransplantdate1"
                                                                 value="">
                                                         </div>
@@ -540,7 +551,7 @@
                                                             <label for="">
                                                                 Never in CR: Date assessed:
                                                             </label>
-                                                            <input class="form-control my_date_picker " type="text"
+                                                            <input data-jdp class="form-control my_date_picker " type="text"
                                                                 name="bestdiseasestatusresponseaftertransplantdate2"
                                                                 value="">
                                                         </div>
@@ -584,7 +595,7 @@
                                                                         Date of diagnosis
 
                                                                     </label>
-                                                                    <input type="text"
+                                                                    <input data-jdp type="text"
                                                                         class="form-control my_date_picker "
                                                                         name="dateofdiagnosis12" value="">
                                                                 </div>
@@ -634,7 +645,7 @@
                                                                         Yes :Start date of the additional treatment
                                                                         since last report
                                                                     </label>
-                                                                    <input class="form-control my_date_picker "
+                                                                    <input data-jdp class="form-control my_date_picker "
                                                                         type="text"
                                                                         name="wasadditionaltreatmentgivenforthediseaseindicationfortransplantd"
                                                                         value="">
@@ -752,7 +763,7 @@
                                                                                 </div>
                                                                                 <div class="form-group col-md-12">
                                                                                     <label for="">Date started</label>
-                                                                                    <input type="text"
+                                                                                    <input data-jdp type="text"
                                                                                         class="form-control my_date_picker "
                                                                                         name="datestarted345345"
                                                                                         value="">
@@ -794,8 +805,6 @@
                                                                                 Imatinib mesylate (Gleevec, Glivec)
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -807,8 +816,6 @@
 
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -819,8 +826,6 @@
                                                                                 Nilotinib (Tasigna)
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -831,8 +836,6 @@
                                                                                 Bortezomib (Velcade)
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -843,8 +846,6 @@
                                                                                 Lenalidomide (Revlimid
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -855,8 +856,6 @@
                                                                                 Rituximab (Rituxan, mabthera)
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -867,8 +866,6 @@
                                                                                 Velafermin (FGF
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -880,8 +877,6 @@
 
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -892,8 +887,6 @@
                                                                                 Thalidomide
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -904,8 +897,6 @@
                                                                                 Eculizumab (Soliris
 
                                                                             </label>
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-                                                                                name="chemodrug2354234234yq" value="1">
                                                                         </div>
                                                                         <hr>
                                                                         <div class="form-group col-md-12">
@@ -916,7 +907,6 @@
                                                                                 Other drug/chemotherapy, specify
 
                                                                             </label>
-                                                                            <input type="radio" name="yes" value="">
                                                                             <input type="text" class="form-control "
                                                                                 name="chemodrug2354234234yot" value="">
 
@@ -1008,7 +998,7 @@
 
                                                                     <input type="radio" name="2" value="">
                                                                     <label for="">Yes: Date first seen</label>
-                                                                    <input type="text"
+                                                                    <input data-jdp type="text"
                                                                         class="form-control my_date_picker "
                                                                         name="datefirstseen2323" value="">
 
@@ -1058,14 +1048,14 @@
                                                                         <div class=" col-md-12 "><input type="radio"
                                                                                 name="relapseprogressiondetectedbymethod"
                                                                                 value="No"><label for="">NO: Date
-                                                                                assessed </label> <input type="text"
+                                                                                assessed </label> <input data-jdp type="text"
                                                                                 class="form-control my_date_picker "
                                                                                 name="dateassessed343434" value="">
                                                                         </div>
                                                                         <div class=" col-md-12 "><input type="radio"
                                                                                 name="relapseprogressiondetectedbymethod"
                                                                                 value="Yes"><label for="">Yes: Date
-                                                                                first seen </label> <input type="text"
+                                                                                first seen </label> <input data-jdp type="text"
                                                                                 class="form-control my_date_picker "
                                                                                 name="datefirstseen454545" value="">
                                                                         </div>
@@ -1083,13 +1073,13 @@
                                                                         <div class=" col-md-12 "><input type="radio"
                                                                                 name="relapseprogressiondetectedbymethod"
                                                                                 value="No"><label for="">NO: Date
-                                                                                assessed </label> <input type="text"
+                                                                                assessed </label> <input data-jdp type="text"
                                                                                 class="form-control my_date_picker "
                                                                                 name="dateassessed8878" value=""> </div>
                                                                         <div class=" col-md-12 "><input type="radio"
                                                                                 name="relapseprogressiondetectedbymethod"
                                                                                 value="Yes"><label for="">Yes: Date
-                                                                                first seen </label> <input type="text"
+                                                                                first seen </label> <input data-jdp type="text"
                                                                                 class="form-control my_date_picker "
                                                                                 name="datefirstseen3334" value="">
                                                                         </div>
@@ -1107,13 +1097,13 @@
                                                                         <div class=" col-md-12 "><input type="radio"
                                                                                 name="relapseprogressiondetectedbymethod"
                                                                                 value="No"><label for="">NO: Date
-                                                                                assessed </label> <input type="text"
+                                                                                assessed </label> <input data-jdp type="text"
                                                                                 class="form-control my_date_picker "
                                                                                 name="dateassessed997" value=""> </div>
                                                                         <div class=" col-md-12 "><input type="radio"
                                                                                 name="relapseprogressiondetectedbymethod"
                                                                                 value="Yes"><label for="">Yes: Date
-                                                                                first seen </label> <input type="text"
+                                                                                first seen </label> <input data-jdp type="text"
                                                                                 class="form-control my_date_picker "
                                                                                 name="datefirstseen23788" value="">
                                                                         </div>
@@ -1159,7 +1149,7 @@
                                                                 </div>
                                                                 <div class=" col-md-12 ">
                                                                     <label for="">Last date assessed</label>
-                                                                    <input type="text"
+                                                                    <input data-jdp type="text"
                                                                         class="form-control my_date_picker "
                                                                         name="lastdateassesse21212" value="">
                                                                 </div>
@@ -1205,7 +1195,7 @@
                                                                 </div>
                                                                 <div class=" col-md-12 ">
                                                                     <label for="">Last date assessed</label>
-                                                                    <input type="text"
+                                                                    <input data-jdp type="text"
                                                                         class="form-control my_date_picker "
                                                                         name="lastdateassessed457777" value="">
                                                                 </div>
@@ -1247,7 +1237,7 @@
                                                                 </div>
                                                                 <div class=" col-md-12 ">
                                                                     <label for="">Last date assessed</label>
-                                                                    <input type="text"
+                                                                    <input data-jdp type="text"
                                                                         class="form-control my_date_picker "
                                                                         name="lastdateassessed98765" value="">
                                                                 </div>
@@ -1527,7 +1517,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                Date of first infusion: <input type="text"
+                                                                Date of first infusion: <input data-jdp type="text"
                                                                     name="dateofthsdsdasdsd"
                                                                     class="form-control my_date_picker" value="" />
 
@@ -1848,6 +1838,11 @@
                             // Mini-color js ends
                         });
         </script>
+
+        <script>
+            jalaliDatepicker.startWatch();
+        </script>
+
 </body>
 
 </html>

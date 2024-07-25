@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>Patient-base report</title>
+    <title>Filtered forms</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -281,7 +281,7 @@
 
                             <div class="pcoded-navigatio-lavel">Reports</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="active pcoded-trigger">
+                                <li class="pcoded-trigger">
                                     <a href="{% url 'patient-base-report' %}">
                                         <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                         <span class="pcoded-mtext">Patient-base report</span>
@@ -290,27 +290,56 @@
                                 </li>
                             </ul>
                             <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="none" subitem-border="true">
-                                <li class="pcoded-hasmenu  pcoded-trigger" dropdown-icon="style1" subitem-icon="style6">
+                                <li class="active pcoded-hasmenu  pcoded-trigger" dropdown-icon="style1" subitem-icon="style6">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                         <span class="pcoded-mtext">Form-base report</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                        <li class="">
-                                            <a href="{% url 'form1-base-report' %}">
+                                        {% if f == '1' %}
+                                            <li class="active">
+                                                <a href="{% url 'form1-base-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Form 1</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li class="">
+                                                <a href="{% url 'form1-base-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Form 1</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% if f == '2' %}
+                                            <li class="active">
+                                                <a href="{% url 'form2-base-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Form 2</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li class="">
+                                                <a href="{% url 'form2-base-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Form 2</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% if f == '3' %}
+                                        <li class="active">
+                                            <a href="{% url 'form3-base-report' %}">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Form 1</span>
+                                                <span class="pcoded-mtext">Form 3</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                        <li class="">
-                                            <a href="{% url 'form2-base-report' %}">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Form 2</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
+                                    {% else %}
                                         <li class="">
                                             <a href="{% url 'form3-base-report' %}">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -318,11 +347,11 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
+                                    {% endif %}
                                     </ul>
-                            </li>
+                                </li>
                             </ul>                            
-
-                        </div>
+                    </div>
                     </nav>
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
@@ -331,34 +360,13 @@
                             <div class="main-body">
                                 <div class="page-wrapper">
                                     <!-- Page body start -->
-                                    <form action="" method="post" onkeydown="if(event.keyCode === 13) { 
-                                        return false; 
-                                    }">
-                                        {% csrf_token %}
-                                        <br>     
-                                        <div class="dropdown">
-                                            <label for="searchinpt">Patient:</label>
-                                            <input type="text" name="searchinpt" class="form-control"
-                                                placeholder="Search" id="search-input" aria-haspopup="true"
-                                                aria-expanded="false" style="margin-bottom: 1px;">
-                                            <div class="dropdown-menu w-100" aria-labelledby="search-input">
-                                                {% for patient in patients %}
-                                                    <a class="dropdown-item" href="#">{{patient.cid}} - {{patient.name}}</a>
-                                                {% endfor %}
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary"
-                                        id="primary-popover-content" data-container="body"
-                                        data-toggle="popover" title=""
-                                        data-placement="bottom" style="margin-top: 10px; margin-left: 1px; margin-bottom: 25px;">Search</button>        
-                                    </form>
                                     <div class="page-body">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- Basic Form Inputs card start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Form 1</h5>
+                                                        <h5>Filtered forms</h5>
                                                         <div class="card-header-right">
                                                             <i class="icofont icofont-rounded-down"></i>
                                                         </div>
@@ -371,135 +379,59 @@
                                                                         <th>#</th>
                                                                         <th>Patient</th>
                                                                         <th>EBMT code</th>
-                                                                        <th>Date of this report</th>
-                                                                        <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
+                                                                        <th>Unit</th>
+                                                                        <th>Contact person</th>
+                                                                        <th>Show / Edit / Export / Delete</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    {% for form in form1 %}
+                                                                    {% for form in forms %}
                                                                     <tr>
                                                                         <td>{{ forloop.counter }}</td>
-                                                                        <td>{{patientname}}</td>
+                                                                        <td>{{form.pname}}</td>
                                                                         <td>{{form.ebmtcodecic}}</td>
-                                                                        <td>{{form.dateofthisreport}}</td>
-                                                                        <td>{{form.date_of_submit}}</td>
+                                                                        <td>{{form.unit}}</td>
+                                                                        <td>{{form.contactperson}}</td>
                                                                         <td>
                                                                             <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
-                                                                                    href="{% url 'showform1' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-eye-alt"></i></a>
-                                                                                <a class="btn btn-inverse btn-icon"
-                                                                                    href="{% url 'editform1' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-edit"></i></a>
-                                                                                        <a class="btn btn-success btn-icon"
+                                                                                {% if f == '1' %}
+                                                                                    <a class="btn btn-default btn-icon"
+                                                                                        href="{% url 'showform1' form.id %}" target="_blank"><i
+                                                                                            class="icofont icofont-eye-alt"></i></a>
+                                                                                    <a class="btn btn-inverse btn-icon"
+                                                                                        href="{% url 'editform1' form.id %}" target="_blank"><i
+                                                                                            class="icofont icofont-edit"></i></a>
+                                                                                    <a class="btn btn-success btn-icon"
                                                                                         href="{% url 'excel-export' 1 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    {% endfor %}
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <!-- Basic Form Inputs card end -->
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Form 2</h5>
-                                                        <div class="card-header-right">
-                                                            <i class="icofont icofont-rounded-down"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block table-border-style">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Patient</th>
-                                                                        <th>EBMT code</th>
-                                                                        <th>Date of this report</th>
-                                                                        <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    {% for form in form2 %}
-                                                                    <tr>
-                                                                        <td>{{ forloop.counter }}</td>
-                                                                        <td>{{patientname}}</td>
-                                                                        <td>{{form.ebmtcodecic}}</td>
-                                                                        <td>{{form.dateofthisreport}}</td>
-                                                                        <td>{{form.date_of_submit}}</td>
-                                                                        <td>
-                                                                            <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
+                                                                                    <a class="btn btn-danger btn-icon"
+                                                                                        href="{% url 'deleteform1' form.id %}"><i class="ti-trash"></i></a>    
+                                                                                {% elif f == '2' %}
+                                                                                    <a class="btn btn-default btn-icon"
                                                                                     href="{% url 'showform2' form.id %}" target="_blank"><i
                                                                                         class="icofont icofont-eye-alt"></i></a>
-                                                                                <a class="btn btn-inverse btn-icon"
-                                                                                href="{% url 'editform2' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-edit"></i></a>
-                                                                                        <a class="btn btn-success btn-icon"
+                                                                                    <a class="btn btn-inverse btn-icon"
+                                                                                        href="{% url 'editform2' form.id %}" target="_blank"><i
+                                                                                            class="icofont icofont-edit"></i></a>
+                                                                                    <a class="btn btn-success btn-icon"
                                                                                         href="{% url 'excel-export' 2 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    {% endfor %}
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <!-- Basic Form Inputs card end -->
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Form 3</h5>
-                                                        <div class="card-header-right">
-                                                            <i class="icofont icofont-rounded-down"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block table-border-style">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Patient</th>
-                                                                        <th>EBMT code</th>
-                                                                        <th>Date of this report</th>
-                                                                        <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    {% for form in form3 %}
-                                                                    <tr>
-                                                                        <td>{{ forloop.counter }}</td>
-                                                                        <td>{{patientname}}</td>
-                                                                        <td>{{form.ebmtcodecic}}</td>
-                                                                        <td>{{form.dateofthisreport}}</td>
-                                                                        <td>{{form.date_of_submit}}</td>
-                                                                        <td>
-                                                                            <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
+                                                                                            <a class="btn btn-danger btn-icon"
+                                                                                            href="{% url 'deleteform2' form.id %}"><i class="ti-trash"></i></a>    
+                                                                                    {% elif f == '3' %}
+                                                                                    <a class="btn btn-default btn-icon"
                                                                                     href="{% url 'showform3' form.id %}" target="_blank"><i
                                                                                         class="icofont icofont-eye-alt"></i></a>
-                                                                                <a class="btn btn-inverse btn-icon"
-                                                                                href="{% url 'editform3' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-edit"></i></a>
-                                                                                        <a class="btn btn-success btn-icon"
+                                                                                    <a class="btn btn-inverse btn-icon"
+                                                                                        href="{% url 'editform3' form.id %}" target="_blank"><i
+                                                                                            class="icofont icofont-edit"></i></a>
+                                                                                    <a class="btn btn-success btn-icon"
                                                                                         href="{% url 'excel-export' 3 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
-                                                                            </div>
+                                                                                            <a class="btn btn-danger btn-icon"
+                                                                                            href="{% url 'deleteform3' form.id %}"><i class="ti-trash"></i></a>    
+                                                                                    {% endif %}
+                                                                </div>
                                                                         </td>
                                                                     </tr>
                                                                     {% endfor %}
@@ -512,7 +444,6 @@
 
                                                     <!-- Basic Form Inputs card end -->
                                                 </div>
-
                                             </div>
                                         </div>
                                         <!-- Page body end -->

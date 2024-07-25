@@ -4,7 +4,13 @@
 <html lang="en">
 
 <head>
-    <title>Form 3</title>
+    {% if action == 'submit' %}
+        <title>Form 3</title>
+    {% elif action == 'show' %}
+        <title>فرم 3 {{patient.name}}</title>
+    {% elif action == 'edit' %}
+        <title>ویرایش فرم 3 {{patient.name}}</title>
+    {% endif %}
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -73,243 +79,268 @@
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
 
-            <nav class="navbar header-navbar pcoded-header">
-                <div class="navbar-wrapper">
-                    <div class="navbar-logo">
-                    </div>
-                    <div class="navbar-container container-fluid">
-                        <div>
-                            <ul class="nav-left">
-                                <li>
-                                </li>
-                                <li>
-                                    <a class="main-search morphsearch-search" href="#">
-                                        <!-- themify icon -->
-                                        <i class="ti-search"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!" onclick="javascript:toggleFullScreen()">
-                                        <i class="ti-fullscreen"></i>
-                                    </a>
-                                </li>
-                                <li class="mega-menu-top">
-                                    <ul class="show-notification row">
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Popular Links</h6>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="form-elements-component.html">Form Elements</a></li>
-                                                <li><a href="button.html">Buttons</a></li>
-                                                <li><a href="map-google.html">Maps</a></li>
-                                                <li><a href="#!">Contact Cards</a></li>
-                                                <li><a href="user-profile.html">User Information</a></li>
-                                                <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Mailbox</h6>
-                                            <ul class="mega-mailbox">
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-folder"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Data Backup</h5>
-                                                            <small class="text-muted">Store your data</small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-headphone-alt"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Support</h5>
-                                                            <small class="text-muted">24-hour support</small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-dropbox"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Drop-box</h5>
-                                                            <small class="text-muted">Store large amount of data in
-                                                                one-box only
-                                                            </small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="media">
-                                                        <div class="media-left">
-                                                            <i class="ti-location-pin"></i>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5>Location</h5>
-                                                            <small class="text-muted">Find Your Location with ease of
-                                                                use</small>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Gallery</h6>
-                                            <div class="row m-b-20">
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/01.jpg' %}"
-                                                        alt="Gallery-1">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/02.jpg' %}"
-                                                        alt="Gallery-2">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/03.jpg' %}"
-                                                        alt="Gallery-3">
-                                                </div>
-                                            </div>
-                                            <div class="row m-b-20">
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/04.jpg' %}"
-                                                        alt="Gallery-4">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/05.jpg' %}"
-                                                        alt="Gallery-5">
-                                                </div>
-                                                <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/06.jpg' %}"
-                                                        alt="Gallery-6">
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <h6 class="mega-menu-title">Contact Us</h6>
-                                            <div class="mega-menu-contact">
-                                                <div class="form-group row">
-                                                    <label for="example-text-input"
-                                                        class="col-3 col-form-label">Name</label>
-                                                    <div class="col-9">
-                                                        <input class="form-control" type="text"
-                                                            placeholder="Artisanal kale" id="example-text-input">
+            {% if action == 'submit' %}
+                <nav class="navbar header-navbar pcoded-header">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-logo">
+                        </div>
+                        <div class="navbar-container container-fluid">
+                            <div>
+                                <ul class="nav-left">
+                                    <li>
+                                    </li>
+                                    <li>
+                                        <a class="main-search morphsearch-search" href="#">
+                                            <!-- themify icon -->
+                                            <i class="ti-search"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" onclick="javascript:toggleFullScreen()">
+                                            <i class="ti-fullscreen"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mega-menu-top">
+                                        <ul class="show-notification row">
+                                            <li class="col-sm-3">
+                                                <h6 class="mega-menu-title">Popular Links</h6>
+                                                <ul class="mega-menu-links">
+                                                    <li><a href="form-elements-component.html">Form Elements</a></li>
+                                                    <li><a href="button.html">Buttons</a></li>
+                                                    <li><a href="map-google.html">Maps</a></li>
+                                                    <li><a href="#!">Contact Cards</a></li>
+                                                    <li><a href="user-profile.html">User Information</a></li>
+                                                    <li><a href="auth-lock-screen.html">Lock Screen</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-sm-3">
+                                                <h6 class="mega-menu-title">Mailbox</h6>
+                                                <ul class="mega-mailbox">
+                                                    <li>
+                                                        <a href="#" class="media">
+                                                            <div class="media-left">
+                                                                <i class="ti-folder"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5>Data Backup</h5>
+                                                                <small class="text-muted">Store your data</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="media">
+                                                            <div class="media-left">
+                                                                <i class="ti-headphone-alt"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5>Support</h5>
+                                                                <small class="text-muted">24-hour support</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="media">
+                                                            <div class="media-left">
+                                                                <i class="ti-dropbox"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5>Drop-box</h5>
+                                                                <small class="text-muted">Store large amount of data in
+                                                                    one-box only
+                                                                </small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="media">
+                                                            <div class="media-left">
+                                                                <i class="ti-location-pin"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5>Location</h5>
+                                                                <small class="text-muted">Find Your Location with ease of
+                                                                    use</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-sm-3">
+                                                <h6 class="mega-menu-title">Gallery</h6>
+                                                <div class="row m-b-20">
+                                                    <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                            src="{% static 'assets/images/mega-menu/01.jpg' %}"
+                                                            alt="Gallery-1">
+                                                    </div>
+                                                    <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                            src="{% static 'assets/images/mega-menu/02.jpg' %}"
+                                                            alt="Gallery-2">
+                                                    </div>
+                                                    <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                            src="{% static 'assets/images/mega-menu/03.jpg' %}"
+                                                            alt="Gallery-3">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="example-search-input"
-                                                        class="col-3 col-form-label">Email</label>
-                                                    <div class="col-9">
-                                                        <input class="form-control" type="email"
-                                                            placeholder="Enter your E-mail Id"
-                                                            id="example-search-input">
+                                                <div class="row m-b-20">
+                                                    <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                            src="{% static 'assets/images/mega-menu/04.jpg' %}"
+                                                            alt="Gallery-4">
+                                                    </div>
+                                                    <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                            src="{% static 'assets/images/mega-menu/05.jpg' %}"
+                                                            alt="Gallery-5">
+                                                    </div>
+                                                    <div class="col-sm-4"><img class="img-fluid img-thumbnail"
+                                                            src="{% static 'assets/images/mega-menu/06.jpg' %}"
+                                                            alt="Gallery-6">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="example-search-input"
-                                                        class="col-3 col-form-label">Contact</label>
-                                                    <div class="col-9">
-                                                        <input class="form-control" type="number"
-                                                            placeholder="+91-9898989898" id="example-search-input">
+                                                <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
+                                            </li>
+                                            <li class="col-sm-3">
+                                                <h6 class="mega-menu-title">Contact Us</h6>
+                                                <div class="mega-menu-contact">
+                                                    <div class="form-group row">
+                                                        <label for="example-text-input"
+                                                            class="col-3 col-form-label">Name</label>
+                                                        <div class="col-9">
+                                                            <input class="form-control" type="text"
+                                                                placeholder="Artisanal kale" id="example-text-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="example-search-input"
+                                                            class="col-3 col-form-label">Email</label>
+                                                        <div class="col-9">
+                                                            <input class="form-control" type="email"
+                                                                placeholder="Enter your E-mail Id"
+                                                                id="example-search-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="example-search-input"
+                                                            class="col-3 col-form-label">Contact</label>
+                                                        <div class="col-9">
+                                                            <input class="form-control" type="number"
+                                                                placeholder="+91-9898989898" id="example-search-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="exampleTextarea"
+                                                            class="col-3 col-form-label">Message</label>
+                                                        <div class="col-9">
+                                                            <textarea class="form-control" id="exampleTextarea"
+                                                                rows="3"></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="exampleTextarea"
-                                                        class="col-3 col-form-label">Message</label>
-                                                    <div class="col-9">
-                                                        <textarea class="form-control" id="exampleTextarea"
-                                                            rows="3"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="nav-right">
-                            </ul>
-                            <div class="upgrade-button-header f-right">
-                            </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="nav-right">
+                                </ul>
+                                <div class="upgrade-button-header f-right">
+                                </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-
+                </nav>
+            {% endif %}
 
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                    <nav class="pcoded-navbar">
-                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                        <div class="pcoded-inner-navbar main-menu">
-                            <div class="pcoded-navigatio-lavel">Registration</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="{% url 'add-patient' %}">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
-                                        <span class="pcoded-mtext">Add patient</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">Forms</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="{% url 'form1' %}">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
-                                        <span class="pcoded-mtext">Form 1</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="{% url 'form2' %}">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
-                                        <span class="pcoded-mtext">Form 2</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="active pcoded-trigger">
-                                    <a href="{% url 'form3' %}">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
-                                        <span class="pcoded-mtext">Form 3</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
+                    {% if action == 'submit' %}
+                        <nav class="pcoded-navbar">
+                            <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                            <div class="pcoded-inner-navbar main-menu">
+                                <div class="pcoded-navigatio-lavel">Registration</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="{% url 'add-patient' %}">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                            <span class="pcoded-mtext">Add patient</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="pcoded-navigatio-lavel">Forms</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="{% url 'form1' %}">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                            <span class="pcoded-mtext">Form 1</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="{% url 'form2' %}">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                            <span class="pcoded-mtext">Form 2</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li class="active pcoded-trigger">
+                                        <a href="{% url 'form3' %}">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                            <span class="pcoded-mtext">Form 3</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
 
 
 
-                            <div class="pcoded-navigatio-lavel">Reports</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="{% url 'patient-base-report' %}">
-                                        <span class="pcoded-micon"><i class="ti-receipt"></i></span>
-                                        <span class="pcoded-mtext">Patient-base report</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="bs-basic-table.html">
-                                        <span class="pcoded-micon"><i class="ti-receipt"></i></span>
-                                        <span class="pcoded-mtext">Attribute-base report</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </nav>
+                                <div class="pcoded-navigatio-lavel">Reports</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="{% url 'patient-base-report' %}">
+                                            <span class="pcoded-micon"><i class="ti-receipt"></i></span>
+                                            <span class="pcoded-mtext">Patient-base report</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="none" subitem-border="true">
+                                    <li class="pcoded-hasmenu  pcoded-trigger" dropdown-icon="style1" subitem-icon="style6">
+                                        <a href="javascript:void(0)">
+                                            <span class="pcoded-micon"><i class="ti-receipt"></i></span>
+                                            <span class="pcoded-mtext">Form-base report</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            <li class="">
+                                                <a href="{% url 'form1-base-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Form 1</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="{% url 'form2-base-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Form 2</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="{% url 'form3-base-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Form 3</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>                            
+                            </div>
+                        </nav>
+                    {% endif %}
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
 
@@ -327,6 +358,7 @@
                                                 <div class="container ltr_form">
                                                     <br>
 
+                                                    {% if action == 'submit' or action == 'filter' %}
 
                                                     <div class="dropdown">
                                                         <label for="searchinpt">Patient:</label>
@@ -339,6 +371,15 @@
                                                             {% endfor %}
                                                         </div>
                                                     </div>
+                                                    {% else %}
+                                                        <div class="dropdown">
+                                                            <label for="searchinpt">Patient:</label>
+                                                            <input type="text" name="searchinpt" class="form-control"
+                                                                placeholder="Search" id="search-input" aria-haspopup="true"
+                                                                aria-expanded="false" style="margin-bottom: 20px;" value="{{patient.cid}} - {{patient.name}}" disabled>
+                                                        </div>
+                                                    {% endif %}
+        
 
 
 
@@ -477,10 +518,10 @@
                                                             </div>
                                                             <div class="form-group col-md-3">
                                                                 <label for="male">Male :</label>
-                                                                <input type="radio" name="sexradio" value="Male">
+                                                                <input type="radio" name="sex" value="Male">
 
                                                                 <label for="female">Female :</label>
-                                                                <input type="radio" name="sexradio" value="Female">
+                                                                <input type="radio" name="sex" value="Female">
 
                                                                 <label for="">(at birth)</label>
                                                             </div>
@@ -1604,13 +1645,23 @@
 
 
                                                         </div>
-
+                                                        {% if action == 'submit' %}
                                                         <button type="submit" class="btn btn-primary"
                                                         id="primary-popover-content" data-container="body"
                                                         data-toggle="popover" title=""
                                                         data-placement="bottom" style="margin-top: 20px; margin-left: 18px;">Submit</button>
-        
-                                                            </div>
+                                                    {% elif action == 'edit' %}
+                                                        <button type="submit" class="btn btn-primary"
+                                                                id="primary-popover-content" data-container="body"
+                                                                data-toggle="popover" title=""
+                                                                data-placement="bottom" style="margin-top: 20px; margin-left: 18px;">Edit</button>
+                                                    {% elif action == 'filter' %}
+                                                        <button type="submit" class="btn btn-primary"
+                                                                id="primary-popover-content" data-container="body"
+                                                                data-toggle="popover" title=""
+                                                                data-placement="bottom" style="margin-top: 20px; margin-left: 18px;">Filter</button>
+                                                    {% endif %}
+                                                                        </div>
                                                     <!-- Page body end -->
                                                 </div>
                                     </form>
@@ -1842,6 +1893,47 @@
         <script>
             jalaliDatepicker.startWatch();
         </script>
+
+        {% if action != 'submit' %}
+            <script>
+                var formData = {
+                    {% for key, val in form.items %}
+                        "{{ key|escapejs }}": "{{ val|escapejs }}"{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                };
+
+                console.log(formData)
+
+                for (var key in formData) {
+                    if (formData.hasOwnProperty(key)) {
+                        var elements = document.getElementsByName(key);
+                        for (let i = 0; i < elements.length; i++) {
+                            if (elements[i]) {
+                                if (elements[i].type == "radio" || elements[i].type == "checkbox") {
+                                    if (elements[i].value == formData[key]) {
+                                        elements[i].checked = true;
+                                    }
+                                } else {
+                                    elements[i].value = formData[key];
+                                }
+                            }
+                        }
+                    }
+                }
+            </script>
+        {% endif %}
+
+        {% if action == 'show' %}
+            <script>
+                function disableAllElements() {
+                    var elements = document.querySelectorAll('input, select, textarea, button, a');
+                    elements.forEach(function(element) {
+                        element.disabled = true;
+                    });
+                }
+                disableAllElements();
+            </script>
+        {% endif %}
 
 </body>
 

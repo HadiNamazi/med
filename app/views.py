@@ -182,6 +182,8 @@ def form1_json(req, customer_id=None, id=None, date_of_submit=None):
         "drugs" : req.POST.get('drugs'),
         "araccytarabine" : req.POST.get('araccytarabine'),
         "araccytarabine_unit" : req.POST.get('araccytarabine_unit'),
+        "carboplatin" : req.POST.get('carboplatin'),
+        "carboplatin_unit" : req.POST.get('carboplatin_unit'),
         "algatgalsats" : req.POST.get('algatgalsats'),
         "algatgalsatsanimalorigin" : req.POST.get('algatgalsatsanimalorigin'),
         "animalorigin_other" : req.POST.get('animalorigin_other'),
@@ -1053,6 +1055,7 @@ def form1_json(req, customer_id=None, id=None, date_of_submit=None):
         "ecptext" : req.POST.get('ecptext'),
         "other120text" : req.POST.get('other120text'),
         "araccytarabinedose" : req.POST.get('araccytarabinedose'),
+        "carboplatindose" : req.POST.get('carboplatindose'),
         "algatgalsatsanimalorigindose" : req.POST.get('algatgalsatsanimalorigindose'),
         "bleomycindose" : req.POST.get('bleomycindose'),
         "busulfantypedose" : req.POST.get('busulfantypedose'),
@@ -1382,6 +1385,7 @@ def form2(req):
     if req.method == 'GET':
         patients = models.Patient.objects.all()
         context = {
+            'action': 'submit',
             'patients': patients,
         }
 
@@ -1410,6 +1414,7 @@ def form3(req):
     if req.method == 'GET':
         patients = models.Patient.objects.all()
         context = {
+            'action': 'submit',
             'patients': patients,
         }
         return render(req, 'app/form3.html', context)

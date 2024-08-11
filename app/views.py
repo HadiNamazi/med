@@ -5,12 +5,11 @@ import jdatetime
 from io import BytesIO
 import xlsxwriter
 from django.http import HttpResponse
-
-PASSWORD = '***'
+from .gvars import form1_keys, form2_keys, form3_keys, PASSWORD
 
 def form1_json(req, customer_id=None, id=None, date_of_submit=None):
     new_data = {
-        "id": id,
+        "id" : id,
         "customer_id" : customer_id,
         "date_of_submit" : date_of_submit,
         "undefined" : req.POST.get('undefined'),
@@ -1120,7 +1119,7 @@ def form1_json(req, customer_id=None, id=None, date_of_submit=None):
 
 def form2_json(req, id=None, customer_id=None, date_of_submit=None):
     new_data = {
-        "id": id,
+        "id" : id,
         "customer_id" : customer_id,
         "date_of_submit" : date_of_submit,
         "CIC" : req.POST.get('CIC'),
@@ -1251,7 +1250,7 @@ def form2_json(req, id=None, customer_id=None, date_of_submit=None):
 
 def form3_json(req, id=None, customer_id=None, date_of_submit=None):
     new_data = {
-        "id": id,
+        "id" : id,
         "customer_id" : customer_id,
         "date_of_submit" : date_of_submit,
         "CIC" : req.POST.get('CIC'),
@@ -1500,7 +1499,7 @@ def patient_base_report(req):
             patient_id = int(patient_id[:len(patient_id)-1])
             patient_name = patient.split('-')[1][1:]
         except:
-            return redirect('patient-base-report')
+            return redirect('single-patient-report')
         
         form1 = models.Form1.objects.get().data['form_1']
         form2 = models.Form2.objects.get().data['form_2']
@@ -1940,5 +1939,104 @@ def excel_export(req, formnum, id):
         workbook.close()
         response = HttpResponse(content_type='application/vnd.ms-excel')
         response['Content-Disposition'] = f"attachment;filename=form{formnum} - {chosen_form['id']}.xlsx"
+        response.write(output.getvalue())
+        return response
+    
+def multi_patient_report(req):
+    if not req.user.is_authenticated:
+        return redirect('login-page')
+
+    patients = models.Patient.objects.all()
+
+    if req.method == 'GET':
+        context = {
+            'patients': patients,
+        }
+        return render(req, 'app/multi_patient_report.html', context)
+
+    elif req.method == 'POST':
+        count = req.POST['hiddeninput']
+        patientids = []
+
+        if count == 'All':
+            patients = models.Patient.objects.all()
+            for patient in patients:
+                patientids.append(int(patient.cid))
+        else:
+            for i in range(int(count)):
+                try:
+                    patient = req.POST[f'searchinpt-{i+1}']
+                    patient_id = patient.split('-')[0]
+                    patient_id = int(patient_id[:len(patient_id)-1])
+                except:
+                    patient_id = None
+                patientids.append(patient_id)
+
+        latest_forms = []
+        for patientid in patientids:
+            latest_form1 = latest_form2 = latest_form3 = None
+            form1 = models.Form1.objects.get().data['form_1']
+            for i in reversed(range(len(form1)-1)):
+                if form1[i]['customer_id'] == patientid:
+                    latest_form1 = form1[i]
+                    break
+            form2 = models.Form2.objects.get().data['form_2']
+            for i in reversed(range(len(form2)-1)):
+                if form2[i]['customer_id'] == patientid:
+                    latest_form2 = form2[i]
+                    break
+            form3 = models.Form3.objects.get().data['form_3']
+            for i in reversed(range(len(form3)-1)):
+                if form3[i]['customer_id'] == patientid:
+                    latest_form3 = form3[i]
+                    break
+            latest_forms.append([latest_form1, latest_form2, latest_form3])
+
+        output = BytesIO()
+        workbook = xlsxwriter.Workbook(output)
+        worksheet1 = workbook.add_worksheet('Form1')
+        worksheet2 = workbook.add_worksheet('Form2')
+        worksheet3 = workbook.add_worksheet('Form3')
+        for j in range(len(latest_forms)):
+            lf1 = latest_forms[j][0]
+            if lf1:
+                for i in range(len(form1_keys)):
+                    worksheet1.write(f'{number_to_excel_column(i+1)}1', form1_keys[i])
+                i = 0
+                cid = lf1['customer_id']
+                pname = models.Patient.objects.get(cid=cid).name
+                lf1['patient_name'] = pname
+                for key, value in lf1.items():
+                    i += 1
+                    worksheet1.write(f'{number_to_excel_column(form1_keys.index(key)+1)}{j+2}', str(value))
+            lf2 = latest_forms[j][1]
+            if lf2:
+                for i in range(len(form2_keys)):
+                    worksheet2.write(f'{number_to_excel_column(i+1)}1', form2_keys[i])
+                i = 0
+                cid = lf2['customer_id']
+                pname = models.Patient.objects.get(cid=cid).name
+                lf2['patient_name'] = pname
+                for key, value in lf2.items():
+                    i += 1
+                    worksheet2.write(f'{number_to_excel_column(form2_keys.index(key)+1)}{j+2}', str(value))
+            lf3 = latest_forms[j][2]
+            if lf3:
+                for i in range(len(form3_keys)):
+                    worksheet3.write(f'{number_to_excel_column(i+1)}1', form3_keys[i])
+                i = 0
+                cid = lf3['customer_id']
+                pname = models.Patient.objects.get(cid=cid).name
+                lf3['patient_name'] = pname
+                for key, value in lf3.items():
+                    i += 1
+                    worksheet3.write(f'{number_to_excel_column(form3_keys.index(key)+1)}{j+2}', str(value))
+
+        worksheet1.autofit()
+        worksheet2.autofit()
+        worksheet3.autofit()
+        workbook.close()
+        response = HttpResponse(content_type='application/vnd.ms-excel')
+        response['Content-Disposition'] = "attachment;filename=formMulti patient report.xlsx"
         response.write(output.getvalue())
         return response

@@ -353,182 +353,31 @@
                                     }">
                                         {% csrf_token %}
                                         <br>     
-                                        <div class="dropdown">
-                                            <label for="searchinpt">Patient:</label>
-                                            <input type="text" name="searchinpt" class="form-control"
-                                                placeholder="Search" id="search-input" aria-haspopup="true"
-                                                aria-expanded="false" style="margin-bottom: 1px;">
-                                            <div class="dropdown-menu w-100" aria-labelledby="search-input">
-                                                {% for patient in patients %}
-                                                    <a class="dropdown-item" href="#">{{patient.cid}} - {{patient.name}}</a>
-                                                {% endfor %}
+                                        <div id="search-fields-container">
+                                            <div class="dropdown" id="searchinptid">
+                                                <label for="searchinpt-1">Patient(s):</label>
+                                                <input type="text" name="searchinpt-1" class="form-control search-input"
+                                                       placeholder="Search" aria-haspopup="true"
+                                                       aria-expanded="false" style="margin-bottom: 10px;">
+                                                <div class="dropdown-menu w-100">
+                                                    {% for patient in patients %}
+                                                        <a class="dropdown-item" href="#">{{ patient.cid }} - {{ patient.name }}</a>
+                                                    {% endfor %}
+                                                </div>
                                             </div>
+                                            <input id="hiddeninput" name="hiddeninput" value="1" hidden></input>
                                         </div>
                                         <button type="submit" class="btn btn-primary"
                                         id="primary-popover-content" data-container="body"
                                         data-toggle="popover" title=""
-                                        data-placement="bottom" style="margin-top: 10px; margin-left: 1px; margin-bottom: 25px;">Search</button>        
+                                        data-placement="bottom" style="margin-top: 10px; margin-left: 1px; margin-bottom: 25px;">Export</button>        
+                                        <button id="add-input" class="btn btn-primary" style="margin-top: 10px; margin-left: 5px; margin-bottom: 25px;" type="button" onclick="addOne()">Add Another Patient</button>
+                                        <button type="submit" class="btn btn-primary" style="margin-top: 10px; margin-left: 5px; margin-bottom: 25px;" onclick="addAll()">Add & export all patients</button>
                                     </form>
                                     <div class="page-body">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- Basic Form Inputs card start -->
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Form 1</h5>
-                                                        <div class="card-header-right">
-                                                            <i class="icofont icofont-rounded-down"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block table-border-style">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Patient</th>
-                                                                        <th>EBMT code</th>
-                                                                        <th>Date of this report</th>
-                                                                        <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    {% for form in form1 %}
-                                                                    <tr>
-                                                                        <td>{{ forloop.counter }}</td>
-                                                                        <td>{{patientname}}</td>
-                                                                        <td>{{form.ebmtcodecic}}</td>
-                                                                        <td>{{form.dateofthisreport}}</td>
-                                                                        <td>{{form.date_of_submit}}</td>
-                                                                        <td>
-                                                                            <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
-                                                                                    href="{% url 'showform1' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-eye-alt"></i></a>
-                                                                                <a class="btn btn-inverse btn-icon"
-                                                                                    href="{% url 'editform1' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-edit"></i></a>
-                                                                                        <a class="btn btn-success btn-icon"
-                                                                                        href="{% url 'excel-export' 1 form.id %}"><i
-                                                                                            class="icofont icofont-file-excel"></i></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    {% endfor %}
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <!-- Basic Form Inputs card end -->
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Form 2</h5>
-                                                        <div class="card-header-right">
-                                                            <i class="icofont icofont-rounded-down"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block table-border-style">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Patient</th>
-                                                                        <th>EBMT code</th>
-                                                                        <th>Date of this report</th>
-                                                                        <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    {% for form in form2 %}
-                                                                    <tr>
-                                                                        <td>{{ forloop.counter }}</td>
-                                                                        <td>{{patientname}}</td>
-                                                                        <td>{{form.ebmtcodecic}}</td>
-                                                                        <td>{{form.dateofthisreport}}</td>
-                                                                        <td>{{form.date_of_submit}}</td>
-                                                                        <td>
-                                                                            <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
-                                                                                    href="{% url 'showform2' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-eye-alt"></i></a>
-                                                                                <a class="btn btn-inverse btn-icon"
-                                                                                href="{% url 'editform2' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-edit"></i></a>
-                                                                                        <a class="btn btn-success btn-icon"
-                                                                                        href="{% url 'excel-export' 2 form.id %}"><i
-                                                                                            class="icofont icofont-file-excel"></i></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    {% endfor %}
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <!-- Basic Form Inputs card end -->
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Form 3</h5>
-                                                        <div class="card-header-right">
-                                                            <i class="icofont icofont-rounded-down"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block table-border-style">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Patient</th>
-                                                                        <th>EBMT code</th>
-                                                                        <th>Date of this report</th>
-                                                                        <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    {% for form in form3 %}
-                                                                    <tr>
-                                                                        <td>{{ forloop.counter }}</td>
-                                                                        <td>{{patientname}}</td>
-                                                                        <td>{{form.ebmtcodecic}}</td>
-                                                                        <td>{{form.dateofthisreport}}</td>
-                                                                        <td>{{form.date_of_submit}}</td>
-                                                                        <td>
-                                                                            <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
-                                                                                    href="{% url 'showform3' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-eye-alt"></i></a>
-                                                                                <a class="btn btn-inverse btn-icon"
-                                                                                href="{% url 'editform3' form.id %}" target="_blank"><i
-                                                                                        class="icofont icofont-edit"></i></a>
-                                                                                        <a class="btn btn-success btn-icon"
-                                                                                        href="{% url 'excel-export' 3 form.id %}"><i
-                                                                                            class="icofont icofont-file-excel"></i></a>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    {% endfor %}
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <!-- Basic Form Inputs card end -->
-                                                </div>
 
                                             </div>
                                         </div>
@@ -620,38 +469,76 @@
         <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
         <script src="{% static 'assets/js/jquery.mousewheel.min.js' %}"></script>
         <script>
-            $(document).ready(function () {
-                $('#search-input').on('input', function () {
+            function enableAutocomplete(inputField) {
+                $(inputField).on('input', function () {
                     var value = $(this).val().toLowerCase();
+                    var dropdownMenu = $(this).siblings('.dropdown-menu');
+        
                     if (value) {
-                        $('.dropdown-menu').addClass('show');
-                        $('.dropdown-menu a').filter(function () {
+                        dropdownMenu.addClass('show');
+                        dropdownMenu.find('a').filter(function () {
                             $(this).toggle($(this).text().toLowerCase().includes(value));
                         });
                     } else {
-                        $('.dropdown-menu').removeClass('show');
+                        dropdownMenu.removeClass('show');
                     }
                 });
         
-                $('#search-input').on('focus', function () {
-                    if ($('#search-input').val().length > 0) {
-                        $('.dropdown-menu').addClass('show');
+                $(inputField).on('focus', function () {
+                    if ($(this).val().length > 0) {
+                        $(this).siblings('.dropdown-menu').addClass('show');
                     }
                 });
         
-                $('#search-input').on('blur', function () {
+                $(inputField).on('blur', function () {
+                    var dropdownMenu = $(this).siblings('.dropdown-menu');
                     setTimeout(function () {
-                        $('.dropdown-menu').removeClass('show');
+                        dropdownMenu.removeClass('show');
                     }, 200);
                 });
         
-                $('.dropdown-menu a').on('click', function () {
+                $(inputField).siblings('.dropdown-menu').find('a').on('click', function () {
                     var text = $(this).text();
-                    $('#search-input').val(text);
-                    $('.dropdown-menu').removeClass('show');
+                    $(this).closest('.dropdown').find('.search-input').val(text);
+                    $(this).closest('.dropdown-menu').removeClass('show');
+                });
+            }
+        
+            $(document).ready(function () {
+                // Enable autocomplete for the first input
+                enableAutocomplete($('.search-input'));
+        
+                $('#add-input').on('click', function () {
+                    var hp = document.getElementById('hiddeninput');
+                    var num = hp.value;
+                    var newInput = `
+                        <div class="dropdown" id="searchinptid">
+                            <input type="text" name="searchinpt-${num}" class="form-control search-input"
+                                   placeholder="Search" aria-haspopup="true"
+                                   aria-expanded="false" style="margin-bottom: 10px;">
+                            <div class="dropdown-menu w-100">
+                                {% for patient in patients %}
+                                    <a class="dropdown-item" href="#">{{ patient.cid }} - {{ patient.name }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>`;
+                    $('#search-fields-container').append(newInput);
+                    enableAutocomplete($('#search-fields-container').find('.search-input').last());
                 });
             });
+
+            function addAll() {
+                var hp = document.getElementById('hiddeninput');
+                hp.value = 'All';
+            }
+
+            function addOne() {
+                var hp = document.getElementById('hiddeninput');
+                var num = parseInt(hp.value, 10)+1;
+                hp.value = num.toString();
+            }
         </script>        
+        
         <script>
             "use strict";
             $(document).ready(function () {

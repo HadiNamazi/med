@@ -334,17 +334,34 @@
 
 
                                 <div class="pcoded-navigatio-lavel">Reports</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li>
-                                        <a href="{% url 'patient-base-report' %}">
+                                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="none" subitem-border="true">
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style6">
+                                        <a href="javascript:void(0)">
                                             <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                             <span class="pcoded-mtext">Patient-base report</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                    </li>
-                                </ul>
+                                        <ul class="pcoded-submenu">
+                                            <li class="">
+                                                <a href="{% url 'single-patient-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Single-patient report</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="{% url 'multi-patient-report' %}">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext">Multi-patient report</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                </li>
+                                </ul>                            
+    
                                 <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="none" subitem-border="true">
-                                    <li class="pcoded-hasmenu  pcoded-trigger" dropdown-icon="style1" subitem-icon="style6">
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style6">
                                         <a href="javascript:void(0)">
                                             <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                             <span class="pcoded-mtext">Form-base report</span>
@@ -373,9 +390,9 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                    </li>
+                                </li>
                                 </ul>                            
-                            </div>
+                                </div>
                         </nav>
                     {% endif %}
                     <div class="pcoded-content">

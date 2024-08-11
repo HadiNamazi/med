@@ -280,66 +280,54 @@
 
 
                             <div class="pcoded-navigatio-lavel">Reports</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-trigger">
-                                    <a href="{% url 'patient-base-report' %}">
+                            <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="none" subitem-border="true">
+                                <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style6">
+                                    <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                         <span class="pcoded-mtext">Patient-base report</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                </li>
-                            </ul>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="{% url 'single-patient-report' %}">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Single-patient report</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="{% url 'multi-patient-report' %}">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Multi-patient report</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                            </li>
+                            </ul>                            
+
                             <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="none" subitem-border="true">
-                                <li class="active pcoded-hasmenu  pcoded-trigger" dropdown-icon="style1" subitem-icon="style6">
+                                <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style6">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                         <span class="pcoded-mtext">Form-base report</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                        {% if f == '1' %}
-                                            <li class="active">
-                                                <a href="{% url 'form1-base-report' %}">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form 1</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        {% else %}
-                                            <li class="">
-                                                <a href="{% url 'form1-base-report' %}">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form 1</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        {% endif %}
-                                        {% if f == '2' %}
-                                            <li class="active">
-                                                <a href="{% url 'form2-base-report' %}">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form 2</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        {% else %}
-                                            <li class="">
-                                                <a href="{% url 'form2-base-report' %}">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Form 2</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                        {% endif %}
-                                        {% if f == '3' %}
-                                        <li class="active">
-                                            <a href="{% url 'form3-base-report' %}">
+                                        <li class="">
+                                            <a href="{% url 'form1-base-report' %}">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Form 3</span>
+                                                <span class="pcoded-mtext">Form 1</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                    {% else %}
+                                        <li class="">
+                                            <a href="{% url 'form2-base-report' %}">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Form 2</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
                                         <li class="">
                                             <a href="{% url 'form3-base-report' %}">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -347,9 +335,8 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                    {% endif %}
                                     </ul>
-                                </li>
+                            </li>
                             </ul>                            
                     </div>
                     </nav>

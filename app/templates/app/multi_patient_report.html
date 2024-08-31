@@ -237,7 +237,7 @@
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu">
-                            <div class="pcoded-navigatio-lavel">Registration</div>
+                            <div class="pcoded-navigatio-lavel">Patients</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
                                     <a href="{% url 'add-patient' %}">
@@ -247,6 +247,16 @@
                                     </a>
                                 </li>
                             </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'patients' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Patients</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
 
                             <div class="pcoded-navigatio-lavel">Forms</div>
                             <ul class="pcoded-item pcoded-left-item">
@@ -370,7 +380,7 @@
                                         <button type="submit" class="btn btn-primary"
                                         id="primary-popover-content" data-container="body"
                                         data-toggle="popover" title=""
-                                        data-placement="bottom" style="margin-top: 10px; margin-left: 1px; margin-bottom: 25px;">Export</button>        
+                                        data-placement="bottom" style="margin-top: 10px; margin-left: 1px; margin-bottom: 25px;" onclick="submit()">Export</button>        
                                         <button id="add-input" class="btn btn-primary" style="margin-top: 10px; margin-left: 5px; margin-bottom: 25px;" type="button" onclick="addOne()">Add Another Patient</button>
                                         <button type="submit" class="btn btn-primary" style="margin-top: 10px; margin-left: 5px; margin-bottom: 25px;" onclick="addAll()">Add & export all patients</button>
                                     </form>

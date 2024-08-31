@@ -114,7 +114,8 @@ def form1_json(req, customer_id=None, id=None, date_of_submit=None):
         "donor12" : req.POST.get('donor12'),
         "patientidgivenbythedonorregistryorthecbbanklistedabove" : req.POST.get('patientidgivenbythedonorregistryorthecbbanklistedabove'),
         "dateofbirth2" : req.POST.get('dateofbirth2'),
-        "donorcmvstatus" : req.POST.get('donorcmvstatus'),
+        "donor1sex" : req.POST.get("donor1sex"),
+        "donorcmvstatus1" : req.POST.get('donorcmvstatus1'),
         "didthisdonorprovidemorethanonestemcellproduct" : req.POST.get('didthisdonorprovidemorethanonestemcellproduct'),
         "sourceofstemcellsford1p1" : req.POST.get('sourceofstemcellsford1p1'),
         "sourceofstemcellsford1p1_other" : req.POST.get('sourceofstemcellsford1p1_other'),
@@ -149,6 +150,8 @@ def form1_json(req, customer_id=None, id=None, date_of_submit=None):
         "donorcentrename16" : req.POST.get('donorcentrename16'),
         "donor" : req.POST.get('donor'),
         "patient" : req.POST.get('patient'),
+        "donor2sex" : req.POST.get('donor2sex'),
+        "donorcmvstatus2" : req.POST.get('donorcmvstatus2'),
         "dateofbirth3" : req.POST.get('dateofbirth3'),
         "sourceofstemcellsford2p1" : req.POST.get('sourceofstemcellsford2p1'),
         "sourceofstemcellsford2p1_other" : req.POST.get('sourceofstemcellsford2p1_other'),
@@ -1377,6 +1380,46 @@ def add_patient(req):
         patient.save()
         return redirect('add-patient')
 
+def patients(req):
+    if not req.user.is_authenticated:
+        return redirect('login-page')
+
+    if req.method == 'GET':
+        patients = models.Patient.objects.all()
+
+    if req.method == 'POST':
+        customer_id = req.POST.get('searchinpt').split('-')[0]
+        customer_id = int(customer_id[:len(customer_id)-1])
+        patients = models.Patient.objects.filter(cid=customer_id)
+
+    context = {
+        'patients': patients,
+    }
+    return render(req, 'app/patients.html', context)
+
+def edit_patient(req, cid):
+    if not req.user.is_authenticated:
+        return redirect('login-page')
+
+    patient = models.Patient.objects.get(cid=cid)
+
+    if req.method == 'GET':
+        context = {
+            'patient': patient,
+        }
+        return render(req, 'app/edit_patient.html', context)
+
+    if req.method == 'POST':
+        patient.name = req.POST['name']
+        patient.national_code = req.POST['nc']
+        patient.phone_num = req.POST['pn']
+        patient.mobile_phone_num = req.POST['mpn']
+        patient.hospital = req.POST.get('hospital')
+        patient.image = req.FILES.get('image')
+        patient.address = req.POST['address']
+        patient.save()
+        return redirect('edit-patient', patient.cid)
+
 def form2(req):
     if not req.user.is_authenticated:
         return redirect('login-page')
@@ -1399,8 +1442,9 @@ def form2(req):
 
         customer_id = req.POST.get('searchinpt').split('-')[0]
         customer_id = int(customer_id[:len(customer_id)-1])
+        date_of_submit = jdatetime.datetime.now().strftime("%Y/%m/%d")
 
-        new_data = form2_json(req, id, customer_id)
+        new_data = form2_json(req, id, customer_id, date_of_submit=date_of_submit)
 
         form.data['form_2'].append(new_data)
         form.save()
@@ -1426,9 +1470,10 @@ def form3(req):
         else:
             id = form.data['form_3'][-1]['id'] + 1
 
-        customer_id = req.POST.get('searchinpt').split('-')[0]
+        customer_id = int(req.POST.get('searchinpt').split('-')[0])
+        date_of_submit = jdatetime.datetime.now().strftime("%Y/%m/%d")
 
-        new_data = form3_json(req, id, customer_id)
+        new_data = form3_json(req, id, customer_id, date_of_submit=date_of_submit)
 
         form.data['form_3'].append(new_data)
         form.save()
@@ -1715,7 +1760,7 @@ def form1_base_report(req):
 
         forms = models.Form1.objects.get().data['form_1']
         f_forms = []
-        i_form = form1_json(req, patient_id)
+        i_form = form1_json(req, customer_id=patient_id)
 
         for form in forms:
             matched = 0
@@ -1767,7 +1812,7 @@ def form2_base_report(req):
 
         forms = models.Form2.objects.get().data['form_2']
         f_forms = []
-        i_form = form2_json(req, patient_id)
+        i_form = form2_json(req, customer_id=patient_id)
 
         for form in forms:
             matched = 0
@@ -1819,7 +1864,7 @@ def form3_base_report(req):
 
         forms = models.Form3.objects.get().data['form_3']
         f_forms = []
-        i_form = form3_json(req, patient_id)
+        i_form = form3_json(req, customer_id=patient_id)
 
         for form in forms:
             matched = 0

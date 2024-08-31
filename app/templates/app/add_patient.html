@@ -230,12 +230,21 @@
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu">
-                            <div class="pcoded-navigatio-lavel">Registration</div>
+                            <div class="pcoded-navigatio-lavel">Patients</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active pcoded-trigger">
                                     <a href="{% url 'add-patient' %}">
                                         <span class="pcoded-micon"><i class="ti-layers"></i></span>
                                         <span class="pcoded-mtext">Add patient</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li>
+                                    <a href="{% url 'patients' %}">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                        <span class="pcoded-mtext">Patients</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>

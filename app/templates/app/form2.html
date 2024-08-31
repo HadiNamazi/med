@@ -255,12 +255,21 @@
                         <nav class="pcoded-navbar">
                             <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                             <div class="pcoded-inner-navbar main-menu">
-                                <div class="pcoded-navigatio-lavel">Registration</div>
+                                <div class="pcoded-navigatio-lavel">Patients</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="{% url 'add-patient' %}">
                                             <span class="pcoded-micon"><i class="ti-layers"></i></span>
                                             <span class="pcoded-mtext">Add patient</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="{% url 'patients' %}">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i></span>
+                                            <span class="pcoded-mtext">Patients</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -506,10 +515,10 @@
                                                             </div>
                                                             <div class="form-group col-md-3">
                                                                 <label for="male">Male :</label>
-                                                                <input type="radio" name="sex" value="Male">
+                                                                <input type="radio" onclick="toggleRadio(this)" name="sex" value="Male">
 
                                                                 <label for="female">Female :</label>
-                                                                <input type="radio" name="sex" value="Female">
+                                                                <input type="radio" onclick="toggleRadio(this)" name="sex" value="Female">
 
                                                                 <label for="">(at birth)</label>
                                                             </div>
@@ -535,7 +544,7 @@
                                                                     values after 7 days without any transfusion containing
                                                                     neutrophils)</label>
                                                                 <div class="form-group col-md-8">
-                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="absoluteneutrophilcountanc"
                                                                         value="No">
                                                                     <label for="0">No :</label>
 
@@ -545,7 +554,7 @@
                                                                         name="dateoflastassessment11" value="">
                                                                 </div>
                                                                 <div class="form-group col-md-8">
-                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="absoluteneutrophilcountanc"
                                                                         value="Yes">
                                                                     <label for="1">Yes :</label>
 
@@ -555,7 +564,7 @@
                                                                         name="dateofancrecovery11" id="">
                                                                 </div>
                                                                 <div class="form-group col-md-8">
-                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="absoluteneutrophilcountanc"
                                                                         value="Never below">
                                                                     <label for="neverbelow">
                                                                         Never below :
@@ -563,7 +572,7 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-8">
-                                                                    <input type="radio" name="absoluteneutrophilcountanc"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="absoluteneutrophilcountanc"
                                                                         value="Unknow">
                                                                     <label for="unknown">
                                                                         Unknown :
@@ -582,24 +591,24 @@
                                                                         transfusion)
                                                                     </label>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="plateletreconstitution"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="plateletreconstitution"
                                                                             value="No">
                                                                         <label for="">No </label>
 
 
                                                                     </div>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="plateletreconstitution"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="plateletreconstitution"
                                                                             value="Yes">
                                                                         <label for="">Yes : </label>
 
                                                                         <label for="">Date Platelets ≥ 20 x 10 /l:</label>
-                                                                        <input type="text"
-                                                                            class= data-jdp"form-control my_date_picker "
+                                                                        <input data-jdp type="text"
+                                                                            class = "form-control my_date_picker "
                                                                             name="dateplateletsxl11" value="">
                                                                     </div>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="plateletreconstitution"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="plateletreconstitution"
                                                                             value="Never below this level">
                                                                         <label for="">
                                                                             Never below this level
@@ -607,7 +616,7 @@
 
                                                                     </div>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="plateletreconstitution"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="plateletreconstitution"
                                                                             value="Date unknown: patient discharged before levels reached">
                                                                         <label for="">
                                                                             Date unknown: patient discharged before levels
@@ -616,7 +625,7 @@
 
                                                                     </div>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="plateletreconstitution"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="plateletreconstitution"
                                                                             value="Date unknown: out-patient">
                                                                         <label for="">
                                                                             Date unknown: out-patient
@@ -624,7 +633,7 @@
 
                                                                     </div>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="plateletreconstitution"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="plateletreconstitution"
                                                                             value="Unknown">
                                                                         <label for="">
                                                                             Unknown
@@ -647,20 +656,20 @@
                                                                         graft within the first 100 days)
                                                                     </label>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="earlygraftloss"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="earlygraftloss"
                                                                             value="No">
                                                                         <label for="">No </label>
 
 
                                                                     </div>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="earlygraftloss"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="earlygraftloss"
                                                                             value="Yes">
                                                                         <label for="">Yes </label>
 
                                                                     </div>
                                                                     <div class="form-group col-md-8">
-                                                                        <input type="radio" name="earlygraftloss"
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="earlygraftloss"
                                                                             value="Unknown">
                                                                         <label for="">
                                                                             Unknown
@@ -687,43 +696,43 @@
                                                                     <label for="">Maximum Grade:</label>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="acutegraftversushostdiseaseallograftsonly"
                                                                         value="0">
                                                                     <label for="">
                                                                         0 (none)
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="acutegraftversushostdiseaseallograftsonly"
                                                                         value="I">
                                                                     <label for="">
                                                                         I
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="acutegraftversushostdiseaseallograftsonly"
                                                                         value="II">
                                                                     <label for="">
                                                                         II
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="acutegraftversushostdiseaseallograftsonly"
                                                                         value="III">
                                                                     <label for="">
                                                                         III
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="acutegraftversushostdiseaseallograftsonly"
                                                                         value="IV">
                                                                     <label for="">
                                                                         IV
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="acutegraftversushostdiseaseallograftsonly"
                                                                         value="Present but grade unknown">
                                                                     <label for="">
                                                                         Present but grade unknown
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="acutegraftversushostdiseaseallograftsonly"
                                                                         value="Not evaluated">
                                                                     <label for="">
@@ -744,23 +753,23 @@
                                                                 <div class="form-group col-md-6">
                                                                     <input type="checkbox" name="" value="">
                                                                     <label for=""> Skin:</label>
-                                                                    <input type="radio" name="austageskin" value="0">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageskin" value="0">
                                                                     <label for="">
                                                                         0 (none)
                                                                     </label>
-                                                                    <input type="radio" name="austageskin" value="1">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageskin" value="1">
                                                                     <label for="">
                                                                         1
                                                                     </label>
-                                                                    <input type="radio" name="austageskin" value="2">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageskin" value="2">
                                                                     <label for="">
                                                                         2
                                                                     </label>
-                                                                    <input type="radio" name="austageskin" value="3">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageskin" value="3">
                                                                     <label for="">
                                                                         3
                                                                     </label>
-                                                                    <input type="radio" name="austageskin" value="4">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageskin" value="4">
                                                                     <label for="">
                                                                         4
                                                                     </label>
@@ -769,23 +778,23 @@
                                                                 <div class="form-group col-md-12">
                                                                     <input type="checkbox" name="" value="">
                                                                     <label for=""> Liver:</label>
-                                                                    <input type="radio" name="austageliver" value="0">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageliver" value="0">
                                                                     <label for="">
                                                                         0 (none)
                                                                     </label>
-                                                                    <input type="radio" name="austageliver" value="1">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageliver" value="1">
                                                                     <label for="">
                                                                         1
                                                                     </label>
-                                                                    <input type="radio" name="austageliver" value="2">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageliver" value="2">
                                                                     <label for="">
                                                                         2
                                                                     </label>
-                                                                    <input type="radio" name="austageliver" value="3">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageliver" value="3">
                                                                     <label for="">
                                                                         3
                                                                     </label>
-                                                                    <input type="radio" name="austageliver" value="4">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageliver" value="4">
                                                                     <label for="">
                                                                         4
                                                                     </label>
@@ -793,23 +802,23 @@
                                                                 <div class="form-group col-md-12">
                                                                     <input type="checkbox" name="" value="">
                                                                     <label for=""> Lower GI tract :</label>
-                                                                    <input type="radio" name="austagelgt" value="0">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austagelgt" value="0">
                                                                     <label for="">
                                                                         0 (none)
                                                                     </label>
-                                                                    <input type="radio" name="austagelgt" value="1">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austagelgt" value="1">
                                                                     <label for="">
                                                                         1
                                                                     </label>
-                                                                    <input type="radio" name="austagelgt" value="2">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austagelgt" value="2">
                                                                     <label for="">
                                                                         2
                                                                     </label>
-                                                                    <input type="radio" name="austagelgt" value="3">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austagelgt" value="3">
                                                                     <label for="">
                                                                         3
                                                                     </label>
-                                                                    <input type="radio" name="austagelgt" value="4">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austagelgt" value="4">
                                                                     <label for="">
                                                                         4
                                                                     </label>
@@ -817,23 +826,31 @@
                                                                 <div class="form-group col-md-12">
                                                                     <input type="checkbox" name="" value="">
                                                                     <label for=""> Upper GI tract :</label>
-                                                                    <input type="radio" name="austageugt" value="0">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageugt" value="0">
                                                                     <label for="">
                                                                         0 (none)
                                                                     </label>
-                                                                    <input type="radio" name="austageugt" value="1">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageugt" value="1">
                                                                     <label for="">
                                                                         1
+                                                                    </label>
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageugt" value="2">
+                                                                    <label for="">
+                                                                        2
+                                                                    </label>
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageugt" value="3">
+                                                                    <label for="">
+                                                                        3
                                                                     </label>
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for=""> Other site affected :</label>
-                                                                    <input type="radio" name="austageuotttt" value="No">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageuotttt" value="No">
                                                                     <label for="">
                                                                         No
                                                                     </label>
-                                                                    <input type="radio" name="austageuotttt" value="Yes">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="austageuotttt" value="Yes">
                                                                     <label for="">
                                                                         Yes
                                                                     </label>
@@ -850,13 +867,13 @@
                                                                     HSCT)</label>
                                                                 <div class="form-group col-md-12">
 
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="additionalcellinfusionsexcludinganewhsct"
                                                                         value="No">
                                                                     <label for="">
                                                                         No
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="additionalcellinfusionsexcludinganewhsct"
                                                                         value="Yes">
                                                                     <label for="">
@@ -867,13 +884,13 @@
                                                                 <div class="form-group col-md-12">
                                                                     <label for="">Is this cell infusion an allogeneic
                                                                         boost?</label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="isthiscellinfusionanallogeneicboost"
                                                                         value="No">
                                                                     <label for="">
                                                                         No
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="isthiscellinfusionanallogeneicboost"
                                                                         value="Yes">
                                                                     <label for="">
@@ -889,13 +906,13 @@
                                                                 <div class="form-group col-md-12">
                                                                     <label for="">Is this cell infusion an autologous
                                                                         boost?</label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="isthiscellinfusionanautologousboost"
                                                                         value="No">
                                                                     <label for="">
                                                                         No
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="isthiscellinfusionanautologousboost"
                                                                         value="Yes">
                                                                     <label for="">
@@ -911,11 +928,11 @@
                                                                     <label for="">
                                                                         <p style="font-size:16px;">Cell therapy :</p>
                                                                     </label>
-                                                                    <input type="radio" name="celltherapy" value="No">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="celltherapy" value="No">
                                                                     <label for="">
                                                                         No
                                                                     </label>
-                                                                    <input type="radio" name="celltherapy" value="Yes">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="celltherapy" value="Yes">
                                                                     <label for="">
                                                                         Yes
                                                                     </label>
@@ -929,11 +946,11 @@
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="">Source of cell(s) : </label>
-                                                                    <input type="radio" name="sourceofcells" value="Allo">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="sourceofcells" value="Allo">
                                                                     <label for="">
                                                                         Allo
                                                                     </label>
-                                                                    <input type="radio" name="sourceofcells" value="Auto">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="sourceofcells" value="Auto">
                                                                     <label for="">
                                                                         Auto
                                                                     </label>
@@ -944,44 +961,44 @@
                                                                         apply)</label>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="Lymphocyte(DLI)">
                                                                     <label for="">
                                                                         Lymphocyte(DLI)
                                                                     </label>
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="Mesenchymal">
                                                                     <label for="">
                                                                         Mesenchymal
                                                                     </label>
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="Fibroblasts">
                                                                     <label for="">
                                                                         Fibroblasts
                                                                     </label>
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="Dendritic cells">
                                                                     <label for="">
                                                                         Dendritic cells
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="NK cells">
                                                                     <label for="">
                                                                         NK cells
                                                                     </label>
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="Regulatory T-cells">
                                                                     <label for="">
                                                                         Regulatory T-cells
                                                                     </label>
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="Gamma/delta cells">
                                                                     <label for="">
                                                                         Gamma/delta cells
                                                                     </label>
-                                                                    <input type="radio" name="typeofcellscheckallthatapply"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="typeofcellscheckallthatapply"
                                                                         value="Other, specify">
                                                                     <label for="">
                                                                         Other, specify
@@ -1000,25 +1017,25 @@
                                                                     <label for="">Indication: (check all that apply)</label>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Treatment for disease">
                                                                     <label for="">
                                                                         Treatment for disease
                                                                     </label>
-                                                                    <input type="radio" name="indication" value="protocol">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication" value="protocol">
                                                                     <label for="">
                                                                         Planned/protocol
                                                                     </label>
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Mixed chimaerism">
                                                                     <label for="">
                                                                         Mixed chimerism
 
                                                                     </label>
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Prophylactic">
                                                                     <label for="">
                                                                         Prophylactic
@@ -1026,12 +1043,12 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Treatment viral infection">
                                                                     <label for="">
                                                                         Treatment viral infection
                                                                     </label>
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Treatment of GvH">
                                                                     <label for="">
                                                                         Treatment of GvHD
@@ -1039,7 +1056,7 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Loss/decreased chimaerism">
                                                                     <label for="">
                                                                         Loss/decreased chimerism
@@ -1048,7 +1065,7 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Treatment PTLD, EBV lymphoma">
                                                                     <label for="">
                                                                         Treatment PTLD, EBV lymphoma
@@ -1058,7 +1075,7 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="indication"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="indication"
                                                                         value="Other, specify">
                                                                     <label for="">
                                                                         Other, specify:
@@ -1088,7 +1105,7 @@
                                                                 <label for="">Additional disease treatment given (excluding
                                                                     cell infusion)</label>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="additionaldiseasetreatmentgiven" value="No">
                                                                     <label for="">
                                                                         No
@@ -1096,14 +1113,14 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="additionaldiseasetreatmentgiven" value="Yes">
                                                                     <label for="">
                                                                         Yes : Reason for this additional treatment
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="reasonforthisadditionaltreatment"
                                                                         value="Prophylaxis / prevention (planned before the transplant took place)">
                                                                     <label for="">
@@ -1113,7 +1130,7 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="reasonforthisadditionaltreatment"
                                                                         value="For relapse / progression or persistent disease (not planned)">
                                                                     <label for="">
@@ -1132,14 +1149,14 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="chemodrug" value="No">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="chemodrug" value="No">
                                                                     <label for="">
                                                                         No
                                                                     </label>
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio" name="chemodrug" value="Yes">
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="chemodrug" value="Yes">
                                                                     <label for="">
                                                                         Yes:
                                                                     </label>
@@ -1248,7 +1265,7 @@
                                                                         <label for="">Intrathecal:</label>
                                                                     </div>
                                                                     <div class="form-group col-md-12">
-                                                                        <input type="radio" name="intrathecal" value="No">
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="intrathecal" value="No">
                                                                         <label for="">
                                                                             No
 
@@ -1256,7 +1273,7 @@
 
                                                                     </div>
                                                                     <div class="form-group col-md-12">
-                                                                        <input type="radio" name="intrathecal" value="Yes">
+                                                                        <input type="radio" onclick="toggleRadio(this)" name="intrathecal" value="Yes">
                                                                         <label for="">
                                                                             Yes
 
@@ -1266,7 +1283,7 @@
                                                                     <div class="form-group col-md-12">
                                                                         <label for="">Radiotherapy</label>
                                                                         <div class="form-group col-md-12">
-                                                                            <input type="radio" name="radiotherapy"
+                                                                            <input type="radio" onclick="toggleRadio(this)" name="radiotherapy"
                                                                                 value="No">
                                                                             <label for="">
                                                                                 No
@@ -1275,7 +1292,7 @@
 
                                                                         </div>
                                                                         <div class="form-group col-md-12">
-                                                                            <input type="radio" name="radiotherapy"
+                                                                            <input type="radio" onclick="toggleRadio(this)" name="radiotherapy"
                                                                                 value="Yes">
                                                                             <label for="">
                                                                                 Yes
@@ -1284,7 +1301,7 @@
 
                                                                         </div>
                                                                         <div class="form-group col-md-12">
-                                                                            <input type="radio" name="radiotherapy"
+                                                                            <input type="radio" onclick="toggleRadio(this)" name="radiotherapy"
                                                                                 value="Unknow">
                                                                             <label for="">
                                                                                 Unknown
@@ -1325,7 +1342,7 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="bestdiseasestatusresponseafterhsct"
                                                                         value="Continued complete remission (CCR)">
                                                                     <label for="">
@@ -1335,7 +1352,7 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="bestdiseasestatusresponseafterhsct"
                                                                         value="CR achieved: Date achieved">
                                                                     <label for="">
@@ -1349,7 +1366,7 @@
                                                                 </div>
 
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="bestdiseasestatusresponseafterhsct"
                                                                         value="Never in CR : Date assessed">
                                                                     <label for="">
@@ -1362,7 +1379,7 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="bestdiseasestatusresponseafterhsct"
                                                                         value="Not evaluated">
                                                                     <label for="">
@@ -1414,7 +1431,7 @@
                                                                 </div>
 
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresent"
                                                                         value="No">
                                                                     <label for="">
@@ -1426,7 +1443,7 @@
                                                                 </div>
                                                                 <div class="form-group col-md-12">
 
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresent"
                                                                         value="Yes">
                                                                     <label for="">
@@ -1451,21 +1468,21 @@
                                                                 </div>
 
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresentmtpr"
                                                                         value="Limited">
                                                                     <label for="">
                                                                         Limited
 
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresentmtpr"
                                                                         value="Extensive">
                                                                     <label for="">
                                                                         Extensive
                                                                     </label>
 
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresentmtpr"
                                                                         value="Unknown">
                                                                     <label for="">
@@ -1484,28 +1501,28 @@
 
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresentmtprmxz"
                                                                         value="Mild">
                                                                     <label for="">
                                                                         Mild
 
                                                                     </label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresentmtprmxz"
                                                                         value="Moderate">
                                                                     <label for="">
                                                                         Moderate
                                                                     </label>
 
-                                                                    <input type="radio" name="maximumextentduringthisperiod"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="maximumextentduringthisperiod"
                                                                         value="Severe">
                                                                     <label for="">
                                                                         Severe
 
                                                                     </label>
 
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="chronicgraftversushostdiseasepresentmtprmxz"
                                                                         value="Not calculated">
                                                                     <label for="">
@@ -1528,13 +1545,13 @@
                                                                         name="detectedbyanymethod1relaps" value="">
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="firstrelapseorprogressionafterhsct"
                                                                         value="No">
                                                                     <label for="">No</label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="firstrelapseorprogressionafterhsct"
                                                                         value="Yes">
                                                                     <label for="">Yes: Date first seen</label>
@@ -1543,7 +1560,7 @@
                                                                         value="">
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="firstrelapseorprogressionafterhsct"
                                                                         value="Continuous progression since HSCT">
                                                                     <label for="">Continuous progression since HSCT</label>
@@ -1564,21 +1581,21 @@
                                                                         class="form-control "
                                                                         name="relapseprogressiondetectedbymethod1txt"
                                                                         value=""></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethod"
                                                                         value="No"><label for="">NO: </label><span><br>Date
                                                                         assessed <input type="text"
                                                                             class= data-jdp"form-control my_date_picker "
                                                                             name="relapseprogressiondetectedbymethoddaten"
                                                                             value=""> </span></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethod"
                                                                         value="Yes"><label for="">Yes:
                                                                     </label><span><br>Date first seen <input type="text"
                                                                             class= data-jdp"form-control my_date_picker "
                                                                             name="relapseprogressiondetectedbymethoddatey"
                                                                             value=""> </span></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethod"
                                                                         value="Not evaluated"><label for="">Not evaluated
                                                                     </label></div>
@@ -1587,21 +1604,21 @@
                                                                         class="form-control "
                                                                         name="relapseprogressiondetectedbymethod2txt"
                                                                         value=""></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethodcytogeneticcy"
                                                                         value="No"><label for="">NO: </label><span><br>Date
                                                                         assessed <input type="text"
                                                                             class= data-jdp"form-control my_date_picker "
                                                                             name="relapseprogressiondetectedbymethodcytogeneticcydn"
                                                                             value=""> </span></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethodcytogeneticcy"
                                                                         value="Yes"><label for="">Yes:
                                                                     </label><span><br>Date first seen <input type="text"
                                                                             class= data-jdp"form-control my_date_picker "
                                                                             name="relapseprogressiondetectedbymethodcytogeneticcydy"
                                                                             value=""> </span></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethodcytogeneticcy"
                                                                         value="Not evaluated"><label for="">Not evaluated
                                                                     </label></div>
@@ -1610,21 +1627,21 @@
                                                                         class="form-control "
                                                                         name="relapseprogressiondetectedbymethod3txt"
                                                                         value=""></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethodbm"
                                                                         value="No"><label for="">NO: </label><span><br>Date
                                                                         assessed <input type="text"
                                                                             class= data-jdp"form-control my_date_picker "
                                                                             name="relapseprogressiondetectedbymethodbmdtn"
                                                                             value=""> </span></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethodbm"
                                                                         value="Yes"><label for="">Yes:
                                                                     </label><span><br>Date first seen <input type="text"
                                                                             class= data-jdp"form-control my_date_picker "
                                                                             name="relapseprogressiondetectedbymethodbmdty"
                                                                             value=""> </span></div>
-                                                                <div class=" col-md-12 "><input type="radio"
+                                                                <div class=" col-md-12 "><input type="radio" onclick="toggleRadio(this)"
                                                                         name="relapseprogressiondetectedbymethodbm"
                                                                         value="Not evaluated"><label for="">Not evaluated
                                                                     </label></div>
@@ -1645,11 +1662,11 @@
                                                                         by method when the patient was last assessed before
                                                                         day 100 or date of death? </label></div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor458"
                                                                         value="No">
                                                                     <label for="">No</label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor458"
                                                                         value="Yes">
                                                                     <label for="">Yes</label>
@@ -1661,7 +1678,7 @@
                                                                 </div>
                                                                 <div class=" col-md-12 ">
 
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor458"
                                                                         value="Not evaluated since HSCT was done">
                                                                     <label for="">Not evaluated since HSCT was done</label>
@@ -1683,11 +1700,11 @@
                                                                         leukaemias</label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor672"
                                                                         value="No">
                                                                     <label for="">No</label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor672"
                                                                         value="Yes">
                                                                     <label for="">Yes</label>
@@ -1695,11 +1712,11 @@
                                                                     <label for="">
                                                                         was the presence of the disease considered
                                                                         relapse/progression since HSCT?
-                                                                        <input type="radio"
+                                                                        <input type="radio" onclick="toggleRadio(this)"
                                                                             name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor"
                                                                             value="No">
                                                                         <label for="">No</label>
-                                                                        <input type="radio"
+                                                                        <input type="radio" onclick="toggleRadio(this)"
                                                                             name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor"
                                                                             value="Yes">
                                                                         <label for="">Yes</label>
@@ -1711,7 +1728,7 @@
                                                                         name="dateoflastassessment667" value="">
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor151"
                                                                         value="">
                                                                     <label for="">Not evaluated since HSCT was done</label>
@@ -1725,22 +1742,22 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor324"
                                                                         value="">
                                                                     <label for="">No</label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor324"
                                                                         value="">
                                                                     <label for="">Yes</label>
                                                                     :
                                                                     <label for="">
                                                                         as the presence of the disease considered
-                                                                        relapse/progression since HSCT? <input type="radio"
+                                                                        relapse/progression since HSCT? <input type="radio" onclick="toggleRadio(this)"
                                                                             name="wasthepresenceofthediseaseconsideredrelapseprogressionsincehsct"
                                                                             value="">
                                                                         <label for="">No</label>
-                                                                        <input type="radio"
+                                                                        <input type="radio" onclick="toggleRadio(this)"
                                                                             name="wasthepresenceofthediseaseconsideredrelapseprogressionsincehsct"
                                                                             value="">
                                                                         <label for="">Yes</label>
@@ -1752,7 +1769,7 @@
                                                                         name="lastdateassessed" value="">
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="wasdiseasedetectedbymethodwhenthepatientwaslastassessedbefor324"
                                                                         value="Not evaluated since HSCT was done">
                                                                     <label for="">Not evaluated since HSCT was done</label>
@@ -1767,11 +1784,11 @@
 
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="survivalstatuslastcontactdateatdayassessment"
                                                                         value="Alive">
                                                                     <label for="">Alive</label>
-                                                                    <input type="radio"
+                                                                    <input type="radio" onclick="toggleRadio(this)"
                                                                         name="survivalstatuslastcontactdateatdayassessment"
                                                                         value="Dead">
                                                                     <label for="">Dead</label>
@@ -1782,28 +1799,28 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="maincauseofdeath22"
                                                                         value="Relapse or Progression/Persistent disease">
                                                                     <label for="">Relapse or Progression/Persistent
                                                                         disease</label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="maincauseofdeath22"
                                                                         value="Secondary malignancy">
                                                                     <label for="">Secondary malignancy</label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="maincauseofdeath22"
                                                                         value="HSCT Related Cause">
                                                                     <label for="">HSCT Related Cause</label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="maincauseofdeath22"
                                                                         value="Unknown">
                                                                     <label for="">Unknown</label>
                                                                 </div>
                                                                 <div class=" col-md-12 ">
-                                                                    <input type="radio" name="maincauseofdeath22"
+                                                                    <input type="radio" onclick="toggleRadio(this)" name="maincauseofdeath22"
                                                                         value="Other">
                                                                     <label for="">Other</label>
                                                                     <input type="text" class="form-control"
@@ -2187,6 +2204,15 @@
                 disableAllElements();
             </script>
         {% endif %}
+
+        <script>
+            function toggleRadio(radio) {
+                if (radio.wasChecked) {
+                    radio.checked = false;
+                }
+                radio.wasChecked = radio.checked;
+            }
+        </script>
 
 </body>
 

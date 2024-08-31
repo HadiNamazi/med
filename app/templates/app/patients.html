@@ -2,8 +2,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Main page</title>
+    <title>Patients</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,6 +44,11 @@
 </head>
 
 <body>
+    <style>
+        .dropdown-menu.show {
+            display: block;
+        }
+    </style>
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="ball-scale">
@@ -63,6 +69,8 @@
                         <div>
                             <ul class="nav-left">
                                 <li>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
+                                    </div>
                                 </li>
                                 <li>
                                     <a class="main-search morphsearch-search" href="#">
@@ -144,24 +152,30 @@
                                             <h6 class="mega-menu-title">Gallery</h6>
                                             <div class="row m-b-20">
                                                 <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/01.jpg' %}" alt="Gallery-1">
+                                                        src="{% static 'assets/images/mega-menu/01.jpg' %}"
+                                                        alt="Gallery-1">
                                                 </div>
                                                 <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/02.jpg' %}" alt="Gallery-2">
+                                                        src="{% static 'assets/images/mega-menu/02.jpg' %}"
+                                                        alt="Gallery-2">
                                                 </div>
                                                 <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/03.jpg' %}" alt="Gallery-3">
+                                                        src="{% static 'assets/images/mega-menu/03.jpg' %}"
+                                                        alt="Gallery-3">
                                                 </div>
                                             </div>
                                             <div class="row m-b-20">
                                                 <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/04.jpg' %}" alt="Gallery-4">
+                                                        src="{% static 'assets/images/mega-menu/04.jpg' %}"
+                                                        alt="Gallery-4">
                                                 </div>
                                                 <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/05.jpg' %}" alt="Gallery-5">
+                                                        src="{% static 'assets/images/mega-menu/05.jpg' %}"
+                                                        alt="Gallery-5">
                                                 </div>
                                                 <div class="col-sm-4"><img class="img-fluid img-thumbnail"
-                                                        src="{% static 'assets/images/mega-menu/06.jpg' %}" alt="Gallery-6">
+                                                        src="{% static 'assets/images/mega-menu/06.jpg' %}"
+                                                        alt="Gallery-6">
                                                 </div>
                                             </div>
                                             <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
@@ -234,7 +248,7 @@
                                 </li>
                             </ul>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li>
+                                <li class="active pcoded-trigger">
                                     <a href="{% url 'patients' %}">
                                         <span class="pcoded-micon"><i class="ti-layers"></i></span>
                                         <span class="pcoded-mtext">Patients</span>
@@ -242,6 +256,7 @@
                                     </a>
                                 </li>
                             </ul>
+
 
                             <div class="pcoded-navigatio-lavel">Forms</div>
                             <ul class="pcoded-item pcoded-left-item">
@@ -343,15 +358,78 @@
                             <div class="main-body">
                                 <div class="page-wrapper">
                                     <!-- Page body start -->
+                                    <form action="" method="post" onkeydown="if(event.keyCode === 13) { 
+                                        return false; 
+                                    }">
+                                        {% csrf_token %}
+                                        <br>     
+                                        <div class="dropdown">
+                                            <input type="text" name="searchinpt" class="form-control"
+                                                placeholder="Search patient" id="search-input" aria-haspopup="true"
+                                                aria-expanded="false" style="margin-bottom: 1px;">
+                                            <div class="dropdown-menu w-100" aria-labelledby="search-input">
+                                                {% for patient in patients %}
+                                                    <a class="dropdown-item" href="#">{{patient.cid}} - {{patient.name}}</a>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary"
+                                        id="primary-popover-content" data-container="body"
+                                        data-toggle="popover" title=""
+                                        data-placement="bottom" style="margin-top: 10px; margin-left: 1px; margin-bottom: 25px;">Search</button>        
+                                    </form>
                                     <div class="page-body">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                </div>
+                                                <!-- Basic Form Inputs card start -->
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Patients</h5>
+                                                        <div class="card-header-right">
+                                                            <i class="icofont icofont-rounded-down"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block table-border-style">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>id</th>
+                                                                        <th>Name</th>
+                                                                        <th>National code</th>
+                                                                        <th>Hospital</th>
+                                                                        <th>Edit</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    {% for patient in patients %}
+                                                                    <tr>
+                                                                        <td>{{patient.cid}}</td>
+                                                                        <td>{{patient.name}}</td>
+                                                                        <td>{{patient.national_code}}</td>
+                                                                        <td>{{patient.hospital}}</td>
+                                                                        <td>
+                                                                            <div class="icon-btn">
+                                                                                <a class="btn btn-inverse btn-icon"
+                                                                                    href="{% url 'edit-patient' patient.cid %}" target="_blank"><i
+                                                                                        class="icofont icofont-edit"></i></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    {% endfor %}
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+
                                             </div>
                                         </div>
                                         <!-- Page body end -->
                                     </div>
                                 </div>
+                                
                                 <!-- Main-body end -->
                                 <!--<div id="styleSelector">-->
 
@@ -415,10 +493,12 @@
         <script type="text/javascript" src="{% static 'assets/plugins/tether/dist/js/tether.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
         <!-- jquery slimscroll js -->
-        <script type="text/javascript" src="{% static 'assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+        <script type="text/javascript"
+            src="{% static 'assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
         <!-- modernizr js -->
         <script type="text/javascript" src="{% static 'assets/plugins/modernizr/modernizr.js' %}"></script>
-        <script type="text/javascript" src="{% static 'assets/plugins/modernizr/feature-detects/css-scrollbars.js' %}"></script>
+        <script type="text/javascript"
+            src="{% static 'assets/plugins/modernizr/feature-detects/css-scrollbars.js' %}"></script>
 
 
         <!-- Color picker js -->
@@ -433,6 +513,39 @@
         <script src="{% static 'assets/js/demo-12.js' %}"></script>
         <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
         <script src="{% static 'assets/js/jquery.mousewheel.min.js' %}"></script>
+        <script>
+            $(document).ready(function () {
+                $('#search-input').on('input', function () {
+                    var value = $(this).val().toLowerCase();
+                    if (value) {
+                        $('.dropdown-menu').addClass('show');
+                        $('.dropdown-menu a').filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().includes(value));
+                        });
+                    } else {
+                        $('.dropdown-menu').removeClass('show');
+                    }
+                });
+        
+                $('#search-input').on('focus', function () {
+                    if ($('#search-input').val().length > 0) {
+                        $('.dropdown-menu').addClass('show');
+                    }
+                });
+        
+                $('#search-input').on('blur', function () {
+                    setTimeout(function () {
+                        $('.dropdown-menu').removeClass('show');
+                    }, 200);
+                });
+        
+                $('.dropdown-menu a').on('click', function () {
+                    var text = $(this).text();
+                    $('#search-input').val(text);
+                    $('.dropdown-menu').removeClass('show');
+                });
+            });
+        </script>        
         <script>
             "use strict";
             $(document).ready(function () {
@@ -488,7 +601,6 @@
                 // Mini-color js ends
             });
         </script>
-
 </body>
 
 </html>

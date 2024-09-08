@@ -5,7 +5,13 @@ import jdatetime
 from io import BytesIO
 import xlsxwriter
 from django.http import HttpResponse
-from .gvars import form1_keys, form2_keys, form3_keys, PASSWORD
+from .gvars import form1_keys, form2_keys, form3_keys
+import os
+from dotenv import load_dotenv
+
+# loading .env file
+load_dotenv()
+PASSWORD = os.getenv('PASSWORD')
 
 def form1_json(req, customer_id=None, id=None, date_of_submit=None):
     new_data = {

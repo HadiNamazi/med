@@ -400,7 +400,7 @@
                                                                         <th>EBMT code</th>
                                                                         <th>Date of this report</th>
                                                                         <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
+                                                                        <th>Show / Edit / Export / Delete</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -413,15 +413,18 @@
                                                                         <td>{{form.date_of_submit}}</td>
                                                                         <td>
                                                                             <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
+                                                                                <a class="btn btn-default btn-icon"
                                                                                     href="{% url 'showform1' form.id %}" target="_blank"><i
                                                                                         class="icofont icofont-eye-alt"></i></a>
                                                                                 <a class="btn btn-inverse btn-icon"
                                                                                     href="{% url 'editform1' form.id %}" target="_blank"><i
                                                                                         class="icofont icofont-edit"></i></a>
-                                                                                        <a class="btn btn-success btn-icon"
-                                                                                        href="{% url 'excel-export' 1 form.id %}"><i
-                                                                                            class="icofont icofont-file-excel"></i></a>
+                                                                                <a class="btn btn-success btn-icon"
+                                                                                    href="{% url 'excel-export' 1 form.id %}"><i
+                                                                                        class="icofont icofont-file-excel"></i></a>
+                                                                                <a class="btn btn-danger btn-icon"
+                                                                                    onclick="return confirmDelete()"
+                                                                                    href="{% url 'deleteform1' form.id %}"><i class="ti-trash"></i></a>    
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -452,7 +455,7 @@
                                                                         <th>EBMT code</th>
                                                                         <th>Date of this report</th>
                                                                         <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
+                                                                        <th>Show / Edit / Export / Delete</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -465,7 +468,7 @@
                                                                         <td>{{form.date_of_submit}}</td>
                                                                         <td>
                                                                             <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
+                                                                                <a class="btn btn-default btn-icon"
                                                                                     href="{% url 'showform2' form.id %}" target="_blank"><i
                                                                                         class="icofont icofont-eye-alt"></i></a>
                                                                                 <a class="btn btn-inverse btn-icon"
@@ -474,6 +477,10 @@
                                                                                         <a class="btn btn-success btn-icon"
                                                                                         href="{% url 'excel-export' 2 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
+                                                                                            <a class="btn btn-danger btn-icon"
+                                                                                                onclick="return confirmDelete()"
+                                                                                            href="{% url 'deleteform2' form.id %}"><i class="ti-trash"></i></a>    
+        
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -504,7 +511,7 @@
                                                                         <th>EBMT code</th>
                                                                         <th>Date of this report</th>
                                                                         <th>Date of submit</th>
-                                                                        <th>Show / Edit / Export</th>
+                                                                        <th>Show / Edit / Export / Delete</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -517,7 +524,7 @@
                                                                         <td>{{form.date_of_submit}}</td>
                                                                         <td>
                                                                             <div class="icon-btn">
-                                                                                <a class="btn btn-danger btn-icon"
+                                                                                <a class="btn btn-default btn-icon"
                                                                                     href="{% url 'showform3' form.id %}" target="_blank"><i
                                                                                         class="icofont icofont-eye-alt"></i></a>
                                                                                 <a class="btn btn-inverse btn-icon"
@@ -526,6 +533,10 @@
                                                                                         <a class="btn btn-success btn-icon"
                                                                                         href="{% url 'excel-export' 3 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
+                                                                                            <a class="btn btn-danger btn-icon"
+                                                                                                onclick="return confirmDelete()"
+                                                                                            href="{% url 'deleteform3' form.id %}"><i class="ti-trash"></i></a>    
+        
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -717,6 +728,13 @@
                 // Mini-color js ends
             });
         </script>
+
+        <script>
+            function confirmDelete() {
+                return confirm("Are you sure you want to delete this item?");
+            }
+        </script>
+
 </body>
 
 </html>

@@ -1391,12 +1391,12 @@ def patients(req):
         return redirect('login-page')
 
     if req.method == 'GET':
-        patients = models.Patient.objects.all()
+        patients = models.Patient.objects.filter(deleted=False)
 
     if req.method == 'POST':
         customer_id = req.POST.get('searchinpt').split('-')[0]
         customer_id = int(customer_id[:len(customer_id)-1])
-        patients = models.Patient.objects.filter(cid=customer_id)
+        patients = models.Patient.objects.filter(cid=customer_id, deleted=False)
 
     context = {
         'patients': patients,
@@ -1426,12 +1426,24 @@ def edit_patient(req, cid):
         patient.save()
         return redirect('edit-patient', patient.cid)
 
+def delete_patient(req, cid):
+    if not req.user.is_authenticated:
+        return redirect('login-page')
+
+
+    if req.method == 'GET':
+        patient = models.Patient.objects.get(cid=cid)
+        patient.deleted = True
+        patient.save()
+        
+        return redirect('patients')
+
 def form2(req):
     if not req.user.is_authenticated:
         return redirect('login-page')
     
     if req.method == 'GET':
-        patients = models.Patient.objects.all()
+        patients = models.Patient.objects.filter(deleted=False)
         context = {
             'action': 'submit',
             'patients': patients,
@@ -1461,7 +1473,7 @@ def form3(req):
         return redirect('login-page')
     
     if req.method == 'GET':
-        patients = models.Patient.objects.all()
+        patients = models.Patient.objects.filter(deleted=False)
         context = {
             'action': 'submit',
             'patients': patients,
@@ -1490,7 +1502,7 @@ def form1(req):
         return redirect('login-page')
     
     if req.method == 'GET':
-        patients = models.Patient.objects.all()
+        patients = models.Patient.objects.filter(deleted=False)
         context = {
             'action': 'submit',
             'patients': patients,
@@ -1535,7 +1547,7 @@ def patient_base_report(req):
     if not req.user.is_authenticated:
         return redirect('login-page')
 
-    patients = models.Patient.objects.all()
+    patients = models.Patient.objects.filter(deleted=False)
 
     if req.method == 'GET':
         context = {
@@ -1749,7 +1761,7 @@ def form1_base_report(req):
         return redirect('login-page')
 
     if req.method == 'GET':
-        patients = models.Patient.objects.all()
+        patients = models.Patient.objects.filter(deleted=False)
         context = {
             'action': 'filter',
             'patients': patients,
@@ -1801,7 +1813,7 @@ def form2_base_report(req):
         return redirect('login-page')
 
     if req.method == 'GET':
-        patients = models.Patient.objects.all()
+        patients = models.Patient.objects.filter(deleted=False)
         context = {
             'action': 'filter',
             'patients': patients,
@@ -1853,7 +1865,7 @@ def form3_base_report(req):
         return redirect('login-page')
 
     if req.method == 'GET':
-        patients = models.Patient.objects.all()
+        patients = models.Patient.objects.filter(deleted=False)
         context = {
             'action': 'filter',
             'patients': patients,
@@ -1972,9 +1984,16 @@ def excel_export(req, formnum, id):
 
         chosen_form = None
         for form in forms:
-            if form['id'] == int(id):
+            try:
+                cid = form['customer_id']
+                patient = models.Patient.objects.get(cid=cid)
+            except:
+                return redirect('index')
+            if form['id'] == int(id) and not patient.deleted:
                 chosen_form = form
                 break
+        if not chosen_form:
+            return redirect('index')
 
         output = BytesIO()
         workbook = xlsxwriter.Workbook(output)
@@ -1997,7 +2016,7 @@ def multi_patient_report(req):
     if not req.user.is_authenticated:
         return redirect('login-page')
 
-    patients = models.Patient.objects.all()
+    patients = models.Patient.objects.filter(deleted=False)
 
     if req.method == 'GET':
         context = {
@@ -2010,7 +2029,7 @@ def multi_patient_report(req):
         patientids = []
 
         if count == 'All':
-            patients = models.Patient.objects.all()
+            patients = models.Patient.objects.filter(deleted=False)
             for patient in patients:
                 patientids.append(int(patient.cid))
         else:
@@ -2019,6 +2038,9 @@ def multi_patient_report(req):
                     patient = req.POST[f'searchinpt-{i+1}']
                     patient_id = patient.split('-')[0]
                     patient_id = int(patient_id[:len(patient_id)-1])
+                    patient = models.Patient.objects.get(cid=patient_id)
+                    if patient.deleted:
+                        raise Exception
                 except:
                     patient_id = None
                 patientids.append(patient_id)

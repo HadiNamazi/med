@@ -382,6 +382,7 @@
                                                                                         href="{% url 'excel-export' 1 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
                                                                                     <a class="btn btn-danger btn-icon"
+                                                                                    onclick="return confirmDelete()"
                                                                                         href="{% url 'deleteform1' form.id %}"><i class="ti-trash"></i></a>    
                                                                                 {% elif f == '2' %}
                                                                                     <a class="btn btn-default btn-icon"
@@ -394,6 +395,7 @@
                                                                                         href="{% url 'excel-export' 2 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
                                                                                             <a class="btn btn-danger btn-icon"
+                                                                                            onclick="return confirmDelete()"
                                                                                             href="{% url 'deleteform2' form.id %}"><i class="ti-trash"></i></a>    
                                                                                     {% elif f == '3' %}
                                                                                     <a class="btn btn-default btn-icon"
@@ -406,6 +408,7 @@
                                                                                         href="{% url 'excel-export' 3 form.id %}"><i
                                                                                             class="icofont icofont-file-excel"></i></a>
                                                                                             <a class="btn btn-danger btn-icon"
+                                                                                            onclick="return confirmDelete()"
                                                                                             href="{% url 'deleteform3' form.id %}"><i class="ti-trash"></i></a>    
                                                                                     {% endif %}
                                                                 </div>
@@ -598,6 +601,13 @@
                 // Mini-color js ends
             });
         </script>
+
+        <script>
+            function confirmDelete() {
+                return confirm("Are you sure you want to delete this item?");
+            }
+        </script>
+
 </body>
 
 </html>

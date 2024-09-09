@@ -113,10 +113,30 @@
                                                                     <select class="form-control" name="hospital" value="{{patient.hospital}}">
                                                                         <option value="opt1">Select One Hospital
                                                                         </option>
+                                                                        {% if patient.hospital == 'opt2' %}
+                                                                        <option value="opt2" selected>Hospital 1</option>
+                                                                        {% else %}
                                                                         <option value="opt2">Hospital 1</option>
+                                                                        {% endif %}
+
+                                                                        {% if patient.hospital == 'opt3' %}
+                                                                        <option value="opt3" selected>Hospital 2</option>
+                                                                        {% else %}
                                                                         <option value="opt3">Hospital 2</option>
+                                                                        {% endif %}
+
+                                                                        {% if patient.hospital == 'opt4' %}
+                                                                        <option value="opt4" selected>Hospital 3</option>
+                                                                        {% else %}
                                                                         <option value="opt4">Hospital 3</option>
+                                                                        {% endif %}
+
+                                                                        {% if patient.hospital == 'opt5' %}
+                                                                        <option value="opt5" selected>Hospital 4</option>
+                                                                        {% else %}
                                                                         <option value="opt5">Hospital 4</option>
+                                                                        {% endif %}
+
                                                                     </select>
                                                                 </div>
                                                             </div>

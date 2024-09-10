@@ -107,6 +107,7 @@ form1_keys = [
     "dateofbirth2",
     "donor1sex",
     "donorcmvstatus",
+    "donorcmvstatus1",
     "didthisdonorprovidemorethanonestemcellproduct",
     "sourceofstemcellsford1p1",
     "sourceofstemcellsford1p1_other",

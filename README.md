@@ -8,7 +8,7 @@ This project is a custom-built medical panel designed for a children's hospital 
   Medical professionals can easily fill out and update detailed patient medical forms, including fields for patient history, treatment protocols, and therapy outcomes. The forms are structured to capture all necessary data required for cell therapy treatments.
 
 - **Dynamic Data Output:**  
-  The system generates various outputs based on the data entered. Doctors can export patient information and reports in multiple formats, such as PDFs, spreadsheets, or even graphical visualizations, which can assist in medical reviews, consultations, or research.
+  The system generates various outputs based on the data entered. Doctors can export patient information and reports in excel format.
 
 - **Advanced Search and Filtering:**  
   Doctors can quickly search and filter through patient records, helping them access critical information without delay. Customizable filters allow sorting data based on criteria such as diagnosis, therapy progress, or timeframes.

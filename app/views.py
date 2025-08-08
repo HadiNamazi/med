@@ -482,7 +482,7 @@ def form1_base_report(req):
             'f': '1',
             'forms': f_forms,
         }
-            
+
         return render(req, 'app/form_base_report.html', context)
 
 def form2_base_report(req):
@@ -567,16 +567,13 @@ def form3_base_report(req):
             for fkey, fvalue in form.items():
                 for ikey, ivalue in i_form.items():
                     if fkey == ikey:
-                        print(ikey, ivalue)
                         if fvalue == ivalue:
-                            print('inside if')
                             matched += 1
                         else:
                             conflict = True
                             break
                 if conflict:
                     break
-            print(matched, len(i_form))
             if matched == len(i_form):
                 try:
                     pname = ''
@@ -687,8 +684,72 @@ def excel_export(req, formnum, id):
         response = HttpResponse(content_type='application/vnd.ms-excel')
         response['Content-Disposition'] = f"attachment;filename=form{formnum} - {chosen_form['id']}.xlsx"
         response.write(output.getvalue())
+
         return response
     
+def excel_export_all(req, formnum):
+    if not req.user.is_authenticated:
+        return redirect('login-page')
+
+    if req.method == 'GET':
+        ids_str = req.GET.get('ids')
+        ids = list(map(int, ids_str.split(',')))
+
+        if formnum == '1':
+            forms = models.Form1.objects.get().data['form_1']
+        elif formnum == '2':
+            forms = models.Form2.objects.get().data['form_2']
+        elif formnum == '3':
+            forms = models.Form3.objects.get().data['form_3']
+
+        chosen_forms = []
+        for form in forms:
+            cid = form.get('customer_id')
+            fid = form.get('id')
+
+            if cid is None or fid is None:
+                continue
+
+            if fid not in ids:
+                continue
+
+            try:
+                patient = models.Patient.objects.get(cid=cid)
+            except models.Patient.DoesNotExist:
+                print(f"Patient with cid {cid} not found.")
+                continue
+            except Exception as e:
+                print(f"Error fetching patient for cid {cid}:", e)
+                return redirect('index')
+
+            if not patient.deleted:
+                chosen_forms.append(form)
+
+        if chosen_forms == []:
+            return redirect('index')
+
+        output = BytesIO()
+        workbook = xlsxwriter.Workbook(output)
+        worksheet = workbook.add_worksheet()
+
+        headers = chosen_forms[0].keys()
+
+        for col_index, key in enumerate(headers):
+            worksheet.write(0, col_index, key)
+
+        for row_index, form in enumerate(chosen_forms, start=1):
+            for col_index, key in enumerate(headers):
+                worksheet.write(row_index, col_index, str(form.get(key, '')))
+
+        worksheet.autofit()
+        workbook.close()
+        response = HttpResponse(content_type='application/vnd.ms-excel')
+        response['Content-Disposition'] = f"attachment; filename=form{formnum}-all.xlsx"
+        response.write(output.getvalue())
+        return response
+
+
+
 def multi_patient_report(req):
     if not req.user.is_authenticated:
         return redirect('login-page')

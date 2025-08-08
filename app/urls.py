@@ -32,6 +32,6 @@ urlpatterns = [
     path('delete-form/2/<str:id>/', views.delete_form2, name='deleteform2'),
     path('delete-form/3/<str:id>/', views.delete_form3, name='deleteform3'),
 
+    path('excel-export-all/<str:formnum>/', views.excel_export_all, name='excel-export-all'),
     path('excel-export/<str:formnum>/<str:id>/', views.excel_export, name='excel-export'),
-
 ]

@@ -344,9 +344,18 @@
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <h5>Filtered forms</h5>
-                                                        <div class="card-header-right">
+
+                                                        <div class="card-header-right d-flex align-items-center">
+                                                            <a 
+                                                              class="btn btn-primary d-flex justify-content-center align-items-center px-4 py-2"
+                                                              style="margin-right: 16px; height: 35px; font-size: 0.9rem;"
+                                                              href="{% url 'excel-export-all' f %}?ids={% for f in forms %}{{ f.id }}{% if not forloop.last %},{% endif %}{% endfor %}"
+                                                            >
+                                                              Export All
+                                                            </a>
                                                             <i class="icofont icofont-rounded-down"></i>
-                                                        </div>
+                                                          </div>
+                                                          
                                                     </div>
                                                     <div class="card-block table-border-style">
                                                         <div class="table-responsive">

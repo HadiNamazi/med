@@ -723,7 +723,8 @@ def excel_export_all(req, formnum):
                 return redirect('index')
 
             if not patient.deleted:
-                chosen_forms.append(form)
+                new_form = {'patient name': patient.name, **form}
+                chosen_forms.append(new_form)
 
         if chosen_forms == []:
             return redirect('index')

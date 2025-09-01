@@ -692,8 +692,25 @@
                                                                     <label for="">Acute Graft Versus Host Disease
                                                                         (Allografts only)</label>
                                                                 </div>
+
                                                                 <div class="form-group col-md-12">
-                                                                    <label for="">Maximum Grade:</label>
+                                                                    <p>Does the patient have this field? (required)</p>
+                                                                    <input type="radio" onclick="toggleRadio(this)"
+                                                                        name="hasacutegvhd"
+                                                                        value="1">
+                                                                    <label for="">
+                                                                        Yes
+                                                                    </label>
+                                                                    <input type="radio" onclick="toggleRadio(this)"
+                                                                        name="hasacutegvhd"
+                                                                        value="0">
+                                                                    <label for="">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="">Maximum Grade: (required if "Yes" is selected above)</label>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <input type="radio" onclick="toggleRadio(this)"
